@@ -1,6 +1,6 @@
-# The American Commonwealth
+# Generational Commonwealth Official Portal
 
-Draft Vercel-ready static site for a civic publication and project hub.
+Static Vercel site for the Constitution of the Generational Commonwealth.
 
 ## Local Preview
 
@@ -15,15 +15,18 @@ npm run dev
 npm run build
 ```
 
-## Current Direction
+## Structure
 
-- Brand: serious civic/editorial, institutional but modern.
-- First screen: publication identity with an archival hero image in `assets/`.
-- Content model: editorial lanes, prototype queue, and next-prompt targets.
-- Vercel: static deployment, no required environment variables.
+- `content/site-data.json` drives the generated pages.
+- `scripts/build-site.js` generates `dist/`.
+- `assets/generational-commonwealth-flag.png` is the official flag image.
+- `dist/articles/` contains the Preliminary Declaration and Articles I-XXXVI.
+- `dist/identity.html` replaces Article XXXVII as a dedicated identity page.
+- `dist/agencies/` and `dist/institutions/` contain unique directory pages.
 
-## Good Next Prompts
+## Current Navigation
 
-- Turn this into a publication homepage with article cards, issue tags, and a newsletter signup.
-- Add a policy reform database with filters for level of government, difficulty, and impact.
-- Create a local civic dashboard page for meetings, budgets, elected offices, and action items.
+- Institutions: constitutional organs of government, excluding agencies.
+- Agencies: authorities, offices, services, programs, registries, and networks.
+- Articles: all constitutional articles except Article XXXVII.
+- Identity: flag and national animal material from Article XXXVII.

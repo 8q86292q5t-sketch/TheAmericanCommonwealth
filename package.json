@@ -4,7 +4,7 @@
   "private": true,
   "description": "Draft site for The American Commonwealth.",
   "scripts": {
-    "dev": "npx serve .",
+    "dev": "npm run build && npx serve dist",
     "build": "node scripts/build-site.js"
   },
   "devDependencies": {

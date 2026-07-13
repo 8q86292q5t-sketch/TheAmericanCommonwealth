@@ -1,0 +1,1128 @@
+{
+  "site": {
+    "name": "Generational Commonwealth",
+    "formalName": "The Generational Commonwealth",
+    "subtitle": "Official Constitutional Portal",
+    "constitutionTitle": "The Constitution of the Generational Commonwealth",
+    "description": "A formal public portal for the constitutional institutions, agencies, articles, and national identity of the Generational Commonwealth.",
+    "flag": "/assets/generational-commonwealth-flag.png"
+  },
+  "articles": [
+    {
+      "number": "Preliminary Declaration",
+      "roman": "PRELIMINARY",
+      "title": "Status, Interpretation, and Constitutional Purpose",
+      "slug": "preliminary-declaration",
+      "order": 0,
+      "summary": "Section 1 \u2014 Nature of This Instrument This Constitution establishes a fictional democratic constitutional commonwealth organized around distributed executive authority, generational representation, nonpartisan public elections, measurable administration, protected civil liberty, local productive capacity, technological advancement, material circulation, infrastructure resilience, and the preservation of society during catastrophic disruption.",
+      "sections": [
+        "Section 1 \u2014 Nature of This Instrument",
+        "Section 2 \u2014 Controlling Principles",
+        "I. Preamble and Foundational Order",
+        "II. Fundamental Rights and Liberties",
+        "III. The Generational Cohorts",
+        "IV. The Generational Executive Council",
+        "V. The Assembly of State Delegations",
+        "VII. The Judiciary and Constitutional Balance",
+        "VIII. National Action Records",
+        "IX. The Office of National Performance and Accountability"
+      ],
+      "excerpt": [
+        "Section 1 \u2014 Nature of This Instrument",
+        "This Constitution establishes a fictional democratic constitutional commonwealth organized around distributed executive authority, generational representation, nonpartisan public elections, measurable administration, protected civil liberty, local productive capacity, technological advancement, material circulation, infrastructure resilience, and the preservation of society during catastrophic disruption.",
+        "Section 2 \u2014 Controlling Principles",
+        "1. Sovereignty originates in the people and is delegated only through this Constitution.",
+        "2. No generation, official, institution, corporation, donor, military body, algorithm, or emergency authority may possess complete control of the Commonwealth."
+      ]
+    },
+    {
+      "number": "I",
+      "roman": "I",
+      "title": "Preamble and Foundational Order",
+      "slug": "article-i",
+      "order": 1,
+      "summary": "We, the people of the Commonwealth, recognizing that liberty is endangered by concentrated power, that generations possess different experiences but equal dignity, that government promises must be measured against actual results, and that civilization must be prepared both to advance and to endure, establish this Constitution. We establish a republic in which no generation governs alone; no public action escapes record and review; no private wealth purchases public authority; no technology advances without regard.",
+      "sections": [],
+      "excerpt": [
+        "We, the people of the Commonwealth, recognizing that liberty is endangered by concentrated power, that generations possess different experiences but equal dignity, that government promises must be measured against actual results, and that civilization must be prepared both to advance and to endure, establish this Constitution.",
+        "We establish a republic in which no generation governs alone; no public action escapes record and review; no private wealth purchases public authority; no technology advances without regard for human welfare; no useful material is treated as disposable by default; no essential system is permitted to remain needlessly fragile; and no emergency is permitted to destroy the constitutional order it claims to preserve.",
+        "The purposes of this Commonwealth are liberty, justice, public safety, equal protection, productive prosperity, local resilience, scientific advancement, human dignity, intergenerational fairness, and the continuous capacity to restore and improve civil society."
+      ]
+    },
+    {
+      "number": "II",
+      "roman": "II",
+      "title": "Fundamental Rights and Liberties",
+      "slug": "article-ii",
+      "order": 2,
+      "summary": "Section \u2014 Freedom of Religion and Conscience Government shall establish no official religion and shall neither favor nor burden religious belief or nonbelief. No religious test shall be imposed for public office, public employment, voting, education, public benefit, or civic participation.",
+      "sections": [
+        "Section \u2014 Freedom of Religion and Conscience",
+        "Section \u2014 Freedom of Speech and Expression",
+        "Section \u2014 Freedom of the Press",
+        "Section \u2014 Assembly, Association, and Petition",
+        "Section \u2014 Right to Keep and Bear Arms",
+        "Section \u2014 Security of Person, Home, Property, Communications, and Data",
+        "Section \u2014 Due Process and Criminal Procedure",
+        "Section \u2014 Jury Trial",
+        "Section \u2014 Bail, Fines, and Punishment",
+        "Section \u2014 Equal Protection"
+      ],
+      "excerpt": [
+        "Section \u2014 Freedom of Religion and Conscience",
+        "Government shall establish no official religion and shall neither favor nor burden religious belief or nonbelief. No religious test shall be imposed for public office, public employment, voting, education, public benefit, or civic participation.",
+        "Section \u2014 Freedom of Speech and Expression",
+        "Every person may speak, publish, create, criticize, receive lawful information, and express political, scientific, artistic, academic, religious, and personal views. Law may address direct threats, fraud, criminal solicitation, defamation, unlawful harassment, exploitation, or other clearly defined harmful conduct, but shall not punish lawful criticism of government.",
+        "Section \u2014 Freedom of the Press"
+      ]
+    },
+    {
+      "number": "III",
+      "roman": "III",
+      "title": "The Generational Cohorts",
+      "slug": "article-iii",
+      "order": 3,
+      "summary": "For executive representation, every citizen belongs to exactly one age cohort according to age on the official election qualification date. Cohort membership affects executive voting and constitutionally authorized representative structures only; it shall not limit equal civil rights. Cohort Ages Representative Perspective",
+      "sections": [
+        "Cohort Ages Representative Perspective",
+        "Transition Between Cohorts"
+      ],
+      "excerpt": [
+        "For executive representation, every citizen belongs to exactly one age cohort according to age on the official election qualification date. Cohort membership affects executive voting and constitutionally authorized representative structures only; it shall not limit equal civil rights.",
+        "Cohort Ages Representative Perspective",
+        "I 18\u201327 Education, technological adaptation, entry into work, housing access, and future generations",
+        "II 28\u201338 Families, workforce mobility, entrepreneurship, childcare, and household formation",
+        "III 39\u201349 Production, infrastructure, industrial coordination, and institutional management"
+      ]
+    },
+    {
+      "number": "IV",
+      "roman": "IV",
+      "title": "The Generational Executive Council",
+      "slug": "article-iv",
+      "order": 4,
+      "summary": "Collective Executive Authority Executive authority is vested collectively in five Cohort Executives, one elected by each cohort. Each Executive possesses one equal vote. No Executive may exercise unilateral national authority except where this Constitution expressly permits immediate temporary action.",
+      "sections": [
+        "Collective Executive Authority",
+        "Decision Required Approval",
+        "Ordinary executive action Three of five Executives",
+        "Assembly",
+        "Terms, Stability, and Recall"
+      ],
+      "excerpt": [
+        "Collective Executive Authority",
+        "Executive authority is vested collectively in five Cohort Executives, one elected by each cohort. Each Executive possesses one equal vote. No Executive may exercise unilateral national authority except where this Constitution expressly permits immediate temporary action.",
+        "Decision Required Approval",
+        "Ordinary executive action Three of five Executives",
+        "Major national program, borrowing, extended Four of five Executives emergency, or foreign military deployment"
+      ]
+    },
+    {
+      "number": "V",
+      "roman": "V",
+      "title": "The Assembly of State Delegations",
+      "slug": "article-v",
+      "order": 5,
+      "summary": "Tripartite State Representation Each state elects a single State Delegation composed of three delegates elected from separate legislative age bands. The delegation acts as one constitutional unit and casts one indivisible state vote.",
+      "sections": [
+        "Tripartite State Representation",
+        "Delegate Age Band",
+        "Emerging Delegate 18\u201334",
+        "Established Delegate 35\u201354",
+        "Senior Delegate 55 and older",
+        "Presence, Deliberation, and Unanimity",
+        "Deadlock Procedure and Snap Election",
+        "Double-Majority Legislative Passage",
+        "Restriction on Executive Service"
+      ],
+      "excerpt": [
+        "Tripartite State Representation",
+        "Each state elects a single State Delegation composed of three delegates elected from separate legislative age bands. The delegation acts as one constitutional unit and casts one indivisible state vote.",
+        "Delegate Age Band",
+        "Emerging Delegate 18\u201334",
+        "Established Delegate 35\u201354"
+      ]
+    },
+    {
+      "number": "VI",
+      "roman": "VI",
+      "title": "Nonpartisan Elections and the Prohibition of Political Finance",
+      "slug": "article-vi",
+      "order": 6,
+      "summary": "16. Citizenship and residency 17. Cohort or legislative age eligibility",
+      "sections": [
+        "Absolute Prohibition of Political Donations",
+        "Public Election Fund"
+      ],
+      "excerpt": [
+        "16. Citizenship and residency",
+        "17. Cohort or legislative age eligibility",
+        "18. Verified public petition signatures",
+        "19. Public ethics screening",
+        "20. Financial and conflict-of-interest disclosure"
+      ]
+    },
+    {
+      "number": "VII",
+      "roman": "VII",
+      "title": "The Judiciary and Constitutional Balance",
+      "slug": "article-vii",
+      "order": 7,
+      "summary": "Constitutional Supreme Court The highest court shall contain fifteen members selected to provide professional, generational, regional, and intellectual diversity.",
+      "sections": [
+        "Constitutional Supreme Court",
+        "Category Seats Qualification",
+        "Civic member 1 Demonstrated public-service or civil-liberties experience",
+        "Appointment and Independence",
+        "National Court for Grave Crimes",
+        "Public Finding of National Condemnation"
+      ],
+      "excerpt": [
+        "Constitutional Supreme Court",
+        "The highest court shall contain fifteen members selected to provide professional, generational, regional, and intellectual diversity.",
+        "Category Seats Qualification",
+        "Senior judges 4 At least fifteen years of judicial experience",
+        "Practicing lawyers 3 At least twelve years of legal practice"
+      ]
+    },
+    {
+      "number": "VIII",
+      "roman": "VIII",
+      "title": "National Action Records",
+      "slug": "article-viii",
+      "order": 8,
+      "summary": "Every significant law, executive order, regulation, contract, infrastructure project, grant, tax change, emergency action, military action, public-benefit program, agency reorganization, continuation, renewal, or action materially affecting constitutional rights must possess a National Action Record before taking effect, except for immediate defensive emergencies. Emergency records must be published within seventy-two hours. Plain Language and Length",
+      "sections": [
+        "Plain Language and Length",
+        "Record Type Maximum Length Purpose",
+        "Mandatory First-Page Summary",
+        "Traceability and Version Control"
+      ],
+      "excerpt": [
+        "Every significant law, executive order, regulation, contract, infrastructure project, grant, tax change, emergency action, military action, public-benefit program, agency reorganization, continuation, renewal, or action materially affecting constitutional rights must possess a National Action Record before taking effect, except for immediate defensive emergencies. Emergency records must be published within seventy-two hours.",
+        "Plain Language and Length",
+        "Record Type Maximum Length Purpose",
+        "Short-form action 750 words or 3 pages Limited actions with established methods and low complexity",
+        "Standard action 2,500 words or 10 pages Ordinary major laws, programs, regulations, and projects"
+      ]
+    },
+    {
+      "number": "IX",
+      "roman": "IX",
+      "title": "The Office of National Performance and Accountability",
+      "slug": "article-ix",
+      "order": 9,
+      "summary": "The Office of National Performance and Accountability, known as ONPA, independently measures whether public actions produce promised outcomes at reasonable cost and time without imposing unacceptable burdens upon other cohorts, institutions, communities, or future generations. ONPA may audit, inspect, model, investigate, publish, and trigger review, but may not enact policy, command agencies, prosecute crimes, or remove elected officials. Cohort Performance Index",
+      "sections": [
+        "Cohort Performance Index",
+        "Measure Weight",
+        "Policy effectiveness 25%",
+        "Implementation efficiency 20%",
+        "Fiscal responsibility 15%",
+        "Delivery reliability 15%",
+        "Intergenerational impact 10%",
+        "Institutional health 10%",
+        "Transparency and data integrity 5%",
+        "Governance"
+      ],
+      "excerpt": [
+        "The Office of National Performance and Accountability, known as ONPA, independently measures whether public actions produce promised outcomes at reasonable cost and time without imposing unacceptable burdens upon other cohorts, institutions, communities, or future generations. ONPA may audit, inspect, model, investigate, publish, and trigger review, but may not enact policy, command agencies, prosecute crimes, or remove elected officials.",
+        "Cohort Performance Index",
+        "Measure Weight",
+        "Policy effectiveness 25%",
+        "Implementation efficiency 20%"
+      ]
+    },
+    {
+      "number": "X",
+      "roman": "X",
+      "title": "Expiration, Review, and Closure of Public Actions",
+      "slug": "article-x",
+      "order": 10,
+      "summary": "Every government program, regulation, authority, appropriation, and administrative action expires. Permanent programs are prohibited except where expressly created by this Constitution. Indefinite, continuing, automatic, or equivalent language shall not evade expiration.",
+      "sections": [
+        "Action Type Maximum Initial Duration",
+        "Emergency authority 30 days",
+        "Temporary regulation 1 year",
+        "Pilot program 2 years",
+        "Standard program 4 years",
+        "Major infrastructure program 8 years",
+        "Defense procurement 6 years",
+        "Tax provision 5 years",
+        "Public-benefit program 5 years",
+        "Agency mandate 6 years"
+      ],
+      "excerpt": [
+        "Every government program, regulation, authority, appropriation, and administrative action expires. Permanent programs are prohibited except where expressly created by this",
+        "Constitution. Indefinite, continuing, automatic, or equivalent language shall not evade expiration.",
+        "Action Type Maximum Initial Duration",
+        "Emergency authority 30 days",
+        "Temporary regulation 1 year"
+      ]
+    },
+    {
+      "number": "XI",
+      "roman": "XI",
+      "title": "The National Revenue Service and Public Finance",
+      "slug": "article-xi",
+      "order": 11,
+      "summary": "All national government income shall be collected through the National Revenue Service, which replaces the former federal income-tax administration system. Government agencies may not independently solicit or accept private donations, sponsorships, naming rights, conditional grants, or privately earmarked contributions. Administration",
+      "sections": [
+        "Administration",
+        "Individual Income Tax",
+        "Taxable Annual Income Marginal Rate",
+        "$0\u2013$200,000 0%",
+        "$200,000.01\u2013$300,000 10%",
+        "$300,000.01\u2013$750,000 15%",
+        "$750,000.01\u2013$1,000,000 17%",
+        "$1,000,000.01\u2013$10,000,000 20%",
+        "Every dollar above $10,000,000 100% Social Support Contribution",
+        "National Sales Tax"
+      ],
+      "excerpt": [
+        "All national government income shall be collected through the National Revenue Service, which replaces the former federal income-tax administration system. Government agencies may not independently solicit or accept private donations, sponsorships, naming rights, conditional grants, or privately earmarked contributions.",
+        "Administration",
+        "43. Automatic calculation and completed preliminary returns where possible",
+        "44. No annual filing requirement for fully documented persons with zero liability",
+        "45. Individual rather than household taxation"
+      ]
+    },
+    {
+      "number": "XII",
+      "roman": "XII",
+      "title": "The Local Productive Economy, Employment Registry, and Consumer Commerce",
+      "slug": "article-xii",
+      "order": 12,
+      "summary": "prohibiting lawful interstate or international commerce. Community Economic Registries",
+      "sections": [
+        "Community Economic Registries",
+        "Employment Exchange Standards",
+        "Durable Product Standard and Right to Repair",
+        "Deliberate Commercial Obsolescence",
+        "Employee Protection During Dissolution"
+      ],
+      "excerpt": [
+        "prohibiting lawful interstate or international commerce.",
+        "Community Economic Registries",
+        "Every municipality and state shall maintain an Economic Registry recording aggregate population, legitimate available jobs, filled jobs, occupations, compensation ranges, required skills, working hours, workforce shortages, housing availability, students, retirees, caregivers, persons seeking work, persons medically limited or unable to work, and public-support needs. A national system aggregates local data into a National",
+        "Employment Exchange.",
+        "No public registry shall disclose an individual\u2019s medical condition, disability, income, benefits, employment status, or other private information. Economic inactivity alone is not a crime. Persistent unexplained nonparticipation may trigger an offer of assessment, job matching, training, education, transportation, housing help, rehabilitation, treatment, or public service. No person may be compelled to accept private employment."
+      ]
+    },
+    {
+      "number": "XIII",
+      "roman": "XIII",
+      "title": "Subscription Continuity and Tier Non-Regression",
+      "slug": "article-xiii",
+      "order": 13,
+      "summary": "continuing to provide a materially equivalent service. Existing subscribers retain the agreed price unless they voluntarily change plans, terminate service, or the provider lawfully discontinues the product under this Article. Higher Tiers",
+      "sections": [
+        "Higher Tiers",
+        "Non-Regression Once Subscribed",
+        "Discontinuation",
+        "Cancellation"
+      ],
+      "excerpt": [
+        "continuing to provide a materially equivalent service. Existing subscribers retain the agreed price unless they voluntarily change plans, terminate service, or the provider lawfully discontinues the product under this Article.",
+        "Higher Tiers",
+        "A higher-priced tier may be created only when it offers substantial new products, services, functionality, content categories, capacity, or measurable consumer benefit. Advertisement removal, restoration of removed features, ordinary technical quality, basic security, bug fixes, customer service, or artificially imposed restrictions do not independently constitute material additional value.",
+        "Non-Regression Once Subscribed",
+        "Once at least one person subscribes to a defined tier, the provider may not materially reduce, degrade, restrict, or remove the features, service quality, access conditions, content categories, advertising conditions, storage, performance, device access, or principal benefits included when that subscriber enrolled."
+      ]
+    },
+    {
+      "number": "XIV",
+      "roman": "XIV",
+      "title": "Technological Advancement and Human Safety",
+      "slug": "article-xiv",
+      "order": 14,
+      "summary": "The National Agency for Technological Advancement and Human Safety shall accelerate technology that measurably improves scientific capability, prosperity, productivity, human welfare, medicine, infrastructure, or national resilience while identifying and reducing physical, psychological, developmental, economic, environmental, and societal harms. Neither advancement nor safety automatically dominates; the objective is maximum longterm societal benefit consistent with liberty.",
+      "sections": [
+        "Freedom of Innovation",
+        "National Talent Service and Challenges",
+        "Human Impact Office",
+        "Children\u2019s Technology Protection",
+        "Impact Classification and Advancement Zones",
+        "Class Meaning Treatment",
+        "T0 Minimal societal risk No intervention",
+        "T1 Limited individual risk Monitoring",
+        "T2 Significant population exposure Mandatory impact reporting",
+        "Technology National Action Records"
+      ],
+      "excerpt": [
+        "The National Agency for Technological Advancement and Human Safety shall accelerate technology that measurably improves scientific capability, prosperity, productivity, human welfare, medicine, infrastructure, or national resilience while identifying and reducing physical, psychological, developmental, economic, environmental, and societal harms.",
+        "Neither advancement nor safety automatically dominates; the objective is maximum longterm societal benefit consistent with liberty.",
+        "Freedom of Innovation",
+        "No technology may be prohibited merely because it is new, disruptive, economically transformative, politically controversial, or inconsistent with existing institutions.",
+        "Restrictions require specific evidence of substantial harm or a substantial probability of harm and must use the least restrictive effective means."
+      ]
+    },
+    {
+      "number": "XV",
+      "roman": "XV",
+      "title": "Material Circulation, Resource Recovery, and the Elimination of Landfills",
+      "slug": "article-xv",
+      "order": 15,
+      "summary": "National Principle No material product may enter commerce without an approved pathway for continued use, maintenance, repair, reuse, redistribution, disassembly, component recovery, material recovery, recycling, biological processing, industrial conversion, or secure temporary containment. Disposal is treated as a failure of design, production, collection, or administration.",
+      "sections": [
+        "National Principle",
+        "Central Materials Recovery and Recycling Authority",
+        "Universal Coverage and Producer Responsibility",
+        "Material Circulation Authorization",
+        "National Material Bucket System",
+        "Bucket Category",
+        "M00 Direct reuse and standardized components",
+        "M10 Metals",
+        "M20 Glass and ceramics",
+        "M30 Polymers"
+      ],
+      "excerpt": [
+        "National Principle",
+        "No material product may enter commerce without an approved pathway for continued use, maintenance, repair, reuse, redistribution, disassembly, component recovery, material recovery, recycling, biological processing, industrial conversion, or secure temporary containment. Disposal is treated as a failure of design, production, collection, or administration.",
+        "Central Materials Recovery and Recycling Authority",
+        "The Central Materials Recovery and Recycling Authority establishes national standards for material identity, composition reporting, disassembly, collection, transport, sorting, cleaning, reuse, remanufacturing, recycling, biological processing, hazardous recovery, unresolved containment, and redistribution. It maintains the National Material Circulation",
+        "Database and the National Material Bucket System."
+      ]
+    },
+    {
+      "number": "XVI",
+      "roman": "XVI",
+      "title": "Homeland Infrastructure Stability and Civilization Continuity",
+      "slug": "article-xvi",
+      "order": 16,
+      "summary": "National Duty The Commonwealth, states, municipalities, public authorities, and critical operators shall maintain permanent capability to preserve essential human needs and minimum civil order during severe disruption. Critical systems shall be designed for survivability, redundancy, decentralization, repairability, reserve capacity, manual fallback, rapid restoration, and degraded operation, not merely lowest cost or ordinary efficiency.",
+      "sections": [
+        "National Duty",
+        "Essential Continuity Systems",
+        "National Continuity and Infrastructure Stability Authority",
+        "Geographic Continuity Cells",
+        "Sector Safeguards",
+        "Manual and Analog Fallback",
+        "Exercises, Scores, and Domestic Capability"
+      ],
+      "excerpt": [
+        "National Duty",
+        "The Commonwealth, states, municipalities, public authorities, and critical operators shall maintain permanent capability to preserve essential human needs and minimum civil order during severe disruption. Critical systems shall be designed for survivability, redundancy, decentralization, repairability, reserve capacity, manual fallback, rapid restoration, and degraded operation, not merely lowest cost or ordinary efficiency.",
+        "Essential Continuity Systems",
+        "Essential systems include drinking water, water treatment, sewage, wastewater, electricity, fuel and gas, internet and telecommunications, emergency communications, hospitals, emergency medical services, fire and rescue, essential medicines, food production and distribution, critical transportation, payment systems necessary for essential commerce, material recovery required for safety, and any system whose prolonged failure threatens life, health, civil order, or national survival.",
+        "National Continuity and Infrastructure Stability Authority"
+      ]
+    },
+    {
+      "number": "XVII",
+      "roman": "XVII",
+      "title": "National Survival Mode and the Preservation of Civil Society",
+      "slug": "article-xvii",
+      "order": 17,
+      "summary": "Purpose and Activation National Survival Mode is the final constitutional apparatus for conditions in which ordinary government, infrastructure, commerce, communications, healthcare, food distribution, public safety, or administration can no longer maintain minimum national survival. Recession, protest, political opposition, labor action, criticism, electoral instability, or ordinary crime do not independently justify activation.",
+      "sections": [
+        "Purpose and Activation",
+        "Survival Levels",
+        "Level Condition",
+        "1 Severe regional failure",
+        "2 Multi-regional system failure",
+        "3 National essential-system failure",
+        "4 Fragmented national operations",
+        "5 Civilization preservation condition",
+        "Distributed Survival Governance",
+        "Minimum Civil Quality of Life"
+      ],
+      "excerpt": [
+        "Purpose and Activation",
+        "National Survival Mode is the final constitutional apparatus for conditions in which ordinary government, infrastructure, commerce, communications, healthcare, food distribution, public safety, or administration can no longer maintain minimum national survival. Recession, protest, political opposition, labor action, criticism, electoral instability, or ordinary crime do not independently justify activation.",
+        "Activation requires four of five Cohort Executives, two-thirds of State Delegations, emergency review by the Constitutional Supreme Court, and a Survival Declaration Record.",
+        "If communication makes approval temporarily impossible, four Executives may activate the mode for no more than seven days.",
+        "Survival Levels"
+      ]
+    },
+    {
+      "number": "XVIII",
+      "roman": "XVIII",
+      "title": "Public Budget Transparency, Lobbying, and Ethical Government",
+      "slug": "article-xviii",
+      "order": 18,
+      "summary": "Every public expenditure must trace to a lawful revenue source, legislative appropriation, National Action Record, responsible agency, responsible official, stated purpose, expiration date, and review schedule. Budgets shall be published in human-readable, machinereadable, transaction-level, and simplified forms. Secret appropriations are prohibited; classified spending remains subject to independent audit and judicial review.",
+      "sections": [
+        "Petition Without Purchased Access",
+        "Revolving-Door Restrictions"
+      ],
+      "excerpt": [
+        "Every public expenditure must trace to a lawful revenue source, legislative appropriation,",
+        "National Action Record, responsible agency, responsible official, stated purpose, expiration date, and review schedule. Budgets shall be published in human-readable, machinereadable, transaction-level, and simplified forms. Secret appropriations are prohibited; classified spending remains subject to independent audit and judicial review.",
+        "Petition Without Purchased Access",
+        "People and organizations retain the right to petition government through documented public channels. Private paid access is prohibited. Substantive communications concerning legislation, regulation, procurement, taxation, appointments, contracts, enforcement, and",
+        "National Action Records must be disclosed. Advocates may submit evidence and testimony but may not provide officials money, gifts, services, travel, employment promises, or other benefits."
+      ]
+    },
+    {
+      "number": "XIX",
+      "roman": "XIX",
+      "title": "Public Algorithms and Computational Transparency",
+      "slug": "article-xix",
+      "order": 19,
+      "summary": "No algorithm used for taxation, benefits, enforcement prioritization, elections, resource allocation, performance scoring, employment access, medical treatment, legal status, or constitutional accountability may operate as a secret system. 91. Purpose and legal authority",
+      "sections": [],
+      "excerpt": [
+        "No algorithm used for taxation, benefits, enforcement prioritization, elections, resource allocation, performance scoring, employment access, medical treatment, legal status, or constitutional accountability may operate as a secret system.",
+        "91. Purpose and legal authority",
+        "92. Inputs and outputs",
+        "93. Decision logic",
+        "94. Source code where legally permissible"
+      ]
+    },
+    {
+      "number": "XX",
+      "roman": "XX",
+      "title": "Intergenerational Equity and Constitutional Stewardship",
+      "slug": "article-xx",
+      "order": 20,
+      "summary": "Government shall evaluate how actions distribute costs, benefits, risks, debt, environmental consequences, infrastructure obligations, technological harms, material burdens, and institutional effects across generations. No cohort may permanently transfer unreasonable costs to another cohort or future generations without explicit disclosure, supermajority authorization where required, and independent review. Candidate public records shall preserve historical performance, including policies sponsored, results,.",
+      "sections": [],
+      "excerpt": [
+        "Government shall evaluate how actions distribute costs, benefits, risks, debt, environmental consequences, infrastructure obligations, technological harms, material burdens, and institutional effects across generations. No cohort may permanently transfer unreasonable costs to another cohort or future generations without explicit disclosure, supermajority authorization where required, and independent review.",
+        "Candidate public records shall preserve historical performance, including policies sponsored, results, failures, cost variance, forecast accuracy, rights effects, and intergenerational impact. Public service records may not be erased, concealed, or materially altered."
+      ]
+    },
+    {
+      "number": "XXI",
+      "roman": "XXI",
+      "title": "States, Municipalities, and Distributed Administration",
+      "slug": "article-xxi",
+      "order": 21,
+      "summary": "States and municipalities retain authority not delegated to the Commonwealth or prohibited by this Constitution. Local government shall administer community services, economic registries, Continuity Cells, public safety, infrastructure operations, material collection, local courts, and other lawful functions consistent with national rights and interoperability standards. National standards may establish minimum rights, safety, transparency, circulation, continuity, and accountability requirements. Local.",
+      "sections": [],
+      "excerpt": [
+        "States and municipalities retain authority not delegated to the Commonwealth or prohibited by this Constitution. Local government shall administer community services, economic registries, Continuity Cells, public safety, infrastructure operations, material collection, local courts, and other lawful functions consistent with national rights and interoperability standards.",
+        "National standards may establish minimum rights, safety, transparency, circulation, continuity, and accountability requirements. Local governments may exceed those standards where they do not violate constitutional rights or obstruct lawful interstate activity."
+      ]
+    },
+    {
+      "number": "XXII",
+      "roman": "XXII",
+      "title": "Emergency Powers and Constitutional Continuity",
+      "slug": "article-xxii",
+      "order": 22,
+      "summary": "Emergency authority must be specific, publicly justified, geographically and substantively limited, reviewable, and automatically expiring. Emergency declarations shall identify the condition, affected area, activated powers, rights effects, responsible officials, review dates, and termination conditions. No emergency suspends the Constitution. Courts, succession, public records, distributed facilities, emergency communications, offline law access, and elections shall be preserved.",
+      "sections": [],
+      "excerpt": [
+        "Emergency authority must be specific, publicly justified, geographically and substantively limited, reviewable, and automatically expiring. Emergency declarations shall identify the condition, affected area, activated powers, rights effects, responsible officials, review dates, and termination conditions.",
+        "No emergency suspends the Constitution. Courts, succession, public records, distributed facilities, emergency communications, offline law access, and elections shall be preserved.",
+        "Defensive action, continuity operations, and Survival Mode are governed by Articles IV,",
+        "XVI, and XVII."
+      ]
+    },
+    {
+      "number": "XXIII",
+      "roman": "XXIII",
+      "title": "National Defense and Civilian Control",
+      "slug": "article-xxiii",
+      "order": 23,
+      "summary": "Military authority remains subordinate to civilian constitutional government. Offensive war requires unanimous Executive Council approval and two-thirds of State Delegations. Defensive action may begin under the higher executive threshold established by Article IV but expires without legislative authorization.",
+      "sections": [],
+      "excerpt": [
+        "Military authority remains subordinate to civilian constitutional government. Offensive war requires unanimous Executive Council approval and two-thirds of State Delegations.",
+        "Defensive action may begin under the higher executive threshold established by Article IV but expires without legislative authorization.",
+        "Domestic military support may provide logistics, engineering, transportation, medicine, communications, rescue, infrastructure repair, and protection of critical facilities.",
+        "Domestic law enforcement by military forces shall be narrowly limited, temporary, and judicially reviewable."
+      ]
+    },
+    {
+      "number": "XXIV",
+      "roman": "XXIV",
+      "title": "Public Office, Fiduciary Duty, and Personal Accountability",
+      "slug": "article-xxiv",
+      "order": 24,
+      "summary": "Every official is a public fiduciary and must act for the public benefit rather than personal, commercial, familial, organizational, or factional advantage. Financial interests, gifts, outside positions, professional relationships, and conflicts must be disclosed. Deliberate obstruction of lawful auditing, falsification of public data, concealment of material risk, bribery, profiteering, and theft of public or survival resources are constitutional offenses. Corporate or public office does not shield a person who.",
+      "sections": [],
+      "excerpt": [
+        "Every official is a public fiduciary and must act for the public benefit rather than personal, commercial, familial, organizational, or factional advantage. Financial interests, gifts, outside positions, professional relationships, and conflicts must be disclosed. Deliberate obstruction of lawful auditing, falsification of public data, concealment of material risk, bribery, profiteering, and theft of public or survival resources are constitutional offenses.",
+        "Corporate or public office does not shield a person who knowingly directed, authorized, concealed, or substantially enabled serious misconduct. Penalties remain proportionate and subject to due process."
+      ]
+    },
+    {
+      "number": "XXV",
+      "roman": "XXV",
+      "title": "Human Support, Medical Incapacity, and Social Dignity",
+      "slug": "article-xxv",
+      "order": 25,
+      "summary": "The Commonwealth shall maintain a humane system for aged persons, disabled persons, medically unable persons, persons with severe cognitive impairment, and persons temporarily unable to sustain themselves because of catastrophic illness or injury. Eligibility shall be medically and administratively reviewable without degrading treatment or public disclosure of private conditions.",
+      "sections": [],
+      "excerpt": [
+        "The Commonwealth shall maintain a humane system for aged persons, disabled persons, medically unable persons, persons with severe cognitive impairment, and persons temporarily unable to sustain themselves because of catastrophic illness or injury.",
+        "Eligibility shall be medically and administratively reviewable without degrading treatment or public disclosure of private conditions.",
+        "Support may include basic income, housing, medical care, long-term care, assisted living, home health, caregiver support, rehabilitation, mobility, nutrition, transportation, and accessibility. Programs remain subject to National Action Records, expiration, effectiveness review, fraud safeguards, and constitutional appeal."
+      ]
+    },
+    {
+      "number": "XXVI",
+      "roman": "XXVI",
+      "title": "Implementation, Measurement, and Constitutional Simulation",
+      "slug": "article-xxvi",
+      "order": 26,
+      "summary": "Before full implementation, major institutional mechanisms may be tested through transparent simulations, pilot programs, constitutional stress tests, and controlled regional trials. Simulation shall not substitute for democratic authorization or be represented as certainty. The national constitutional simulation shall model citizens, cohorts, candidates, State",
+      "sections": [],
+      "excerpt": [
+        "Before full implementation, major institutional mechanisms may be tested through transparent simulations, pilot programs, constitutional stress tests, and controlled regional trials. Simulation shall not substitute for democratic authorization or be represented as certainty.",
+        "The national constitutional simulation shall model citizens, cohorts, candidates, State",
+        "Delegations, Executives, courts, agencies, policies, National Action Records, taxes, material flows, technological progress, infrastructure dependencies, continuity conditions, and",
+        "Survival Mode. Models, assumptions, source code, data provenance, confidence limits, and known omissions shall be publicly documented.",
+        "Simulation results shall be used to identify deadlock, corruption, capture, fiscal instability, rights infringement, supply failure, cohort conflict, technological debt, material bottlenecks, infrastructure cascades, and restoration weakness. No simulation result alone may enact law or remove a person from office."
+      ]
+    },
+    {
+      "number": "XXVII",
+      "roman": "XXVII",
+      "title": "Amendment and Entrenched Constitutional Guarantees",
+      "slug": "article-xxvii",
+      "order": 27,
+      "summary": "Amendment Procedure 103. Approval by two-thirds of the Assembly of State Delegations",
+      "sections": [
+        "Amendment Procedure",
+        "Entrenched Guarantees"
+      ],
+      "excerpt": [
+        "Amendment Procedure",
+        "103. Approval by two-thirds of the Assembly of State Delegations",
+        "104. Approval by four of the five Cohort Executives",
+        "105. Approval by a majority of voters nationwide",
+        "106. Approval by a majority within at least four of the five Executive Cohorts"
+      ]
+    },
+    {
+      "number": "XXVIII",
+      "roman": "XXVIII",
+      "title": "Transition, Ratification, and Initial Timetables",
+      "slug": "article-xxviii",
+      "order": 28,
+      "summary": "General Transition The transition to this Constitution shall preserve ordinary public services and avoid abrupt termination of lawful rights, contracts, benefits, infrastructure operation, and judicial proceedings. Existing institutions continue temporarily to the extent consistent with this",
+      "sections": [
+        "General Transition",
+        "Priority Timetables",
+        "System Initial Completion Requirement",
+        "National Revenue Service Operational within three years",
+        "Ratification"
+      ],
+      "excerpt": [
+        "General Transition",
+        "The transition to this Constitution shall preserve ordinary public services and avoid abrupt termination of lawful rights, contracts, benefits, infrastructure operation, and judicial proceedings. Existing institutions continue temporarily to the extent consistent with this",
+        "Constitution until successor institutions are established.",
+        "Priority Timetables",
+        "System Initial Completion Requirement"
+      ]
+    },
+    {
+      "number": "XXIX",
+      "roman": "XXIX",
+      "title": "Domestic Human Security, Homelessness Elimination, and Suspension of Foreign Aid",
+      "slug": "article-xxix",
+      "order": 29,
+      "summary": "The direct material obligations of the Commonwealth shall be fulfilled toward its own citizens before discretionary public resources are transferred abroad. This Article establishes a measurable domestic sufficiency standard, a permanent homelessnesselimination system, treatment and protective housing for citizens unable to care for themselves, and a constitutional suspension of foreign aid until domestic human security is independently certified. Section 1 \u2014 Domestic Priority",
+      "sections": [
+        "Section 1 \u2014 Domestic Priority",
+        "Section 2 \u2014 Foreign Aid Defined",
+        "Section 3 \u2014 Excluded International Activity",
+        "Section 4 \u2014 Domestic Human Security Standard",
+        "Section 5 \u2014 National Homelessness Elimination Program",
+        "Section 6 \u2014 Individual Stability Assessment",
+        "Section 7 \u2014 Functional Capacity and Participation",
+        "Section 8 \u2014 Safe Haven Program",
+        "Section 9 \u2014 Voluntary and Protective Placement",
+        "Section 10 \u2014 Employment and Reintegration"
+      ],
+      "excerpt": [
+        "The direct material obligations of the Commonwealth shall be fulfilled toward its own citizens before discretionary public resources are transferred abroad. This Article establishes a measurable domestic sufficiency standard, a permanent homelessnesselimination system, treatment and protective housing for citizens unable to care for themselves, and a constitutional suspension of foreign aid until domestic human security is independently certified.",
+        "Section 1 \u2014 Domestic Priority",
+        "The Commonwealth shall first secure shelter, food, potable water, sanitation, essential medical care, personal safety, and necessary support for citizens who cannot safely support themselves. Foreign aid shall remain suspended until every state has achieved and maintained the Domestic Human Security Standard.",
+        "Section 2 \u2014 Foreign Aid Defined",
+        "Foreign aid includes grants, subsidized loans, military assistance transferred without full payment, foreign budget support, development assistance, debt forgiveness intended as assistance, public humanitarian transfers abroad, and material support furnished without equivalent compensation. Accounting form, intermediaries, or reclassification shall not defeat this definition."
+      ]
+    },
+    {
+      "number": "XXX",
+      "roman": "XXX",
+      "title": "Housing Access, Limited Ownership, Nonprofit Transfer, and Income-Based Occupancy",
+      "slug": "article-xxx",
+      "order": 30,
+      "summary": "Housing shall serve first as a place of residence and human stability rather than an unrestricted vehicle for speculation. This Article establishes limits on residential accumulation, a guaranteed path to first ownership, controlled transfer values, nonprofit rental operation, mandatory income-based affordability, and conversion of unused commercial property when lowest-tier housing demand is unmet. Section 1 \u2014 Residential Ownership Limits",
+      "sections": [
+        "Section 1 \u2014 Residential Ownership Limits",
+        "Certified individual annual income Maximum residential properties",
+        "Below $500,000 One",
+        "$500,000 through $1,000,000 Two",
+        "Above $1,000,000 Three",
+        "Section 2 \u2014 Primary Residence",
+        "Section 3 \u2014 Prohibition of Corporate Accumulation",
+        "Section 4 \u2014 First-Time Homebuyer Ownership Program",
+        "Section 5 \u2014 Twenty-Two-Year Conversion to Ownership",
+        "Section 6 \u2014 Annual Income Adjustment"
+      ],
+      "excerpt": [
+        "Housing shall serve first as a place of residence and human stability rather than an unrestricted vehicle for speculation. This Article establishes limits on residential accumulation, a guaranteed path to first ownership, controlled transfer values, nonprofit rental operation, mandatory income-based affordability, and conversion of unused commercial property when lowest-tier housing demand is unmet.",
+        "Section 1 \u2014 Residential Ownership Limits",
+        "Certified individual annual income Maximum residential properties",
+        "Below $500,000 One $500,000 through $1,000,000 Two",
+        "Above $1,000,000 Three"
+      ]
+    },
+    {
+      "number": "XXXI",
+      "roman": "XXXI",
+      "title": "National Rail Revitalization, Mobility Access, and Transportation Independence",
+      "slug": "article-xxxi",
+      "order": 31,
+      "summary": "The Commonwealth shall construct a modern national railway network capable of replacing a substantial portion of personal-vehicle commuting and short-distance air travel while connecting every state capital, major population center, regional community, and local feeder system. The system shall be affordable, convenient, domestically maintainable, technologically advanced, and usable during national emergencies. Section 1 \u2014 National Rail Authority",
+      "sections": [
+        "Section 1 \u2014 National Rail Authority",
+        "Section 2 \u2014 State Capital Hubs",
+        "Section 3 \u2014 Sixteen-Line Junction Standard",
+        "Section 4 \u2014 Junction and Feeder Network",
+        "Section 5 \u2014 Coverage and Redundancy",
+        "Section 6 \u2014 Frequency and Convenience",
+        "Section 7 \u2014 Unified Ticketing and Offline Access",
+        "Section 8 \u2014 Affordable Fare Standard",
+        "Section 9 \u2014 Vehicle Non-Ownership Mobility Credit",
+        "Section 10 \u2014 Purpose-Based Assistance"
+      ],
+      "excerpt": [
+        "The Commonwealth shall construct a modern national railway network capable of replacing a substantial portion of personal-vehicle commuting and short-distance air travel while connecting every state capital, major population center, regional community, and local feeder system. The system shall be affordable, convenient, domestically maintainable, technologically advanced, and usable during national emergencies.",
+        "Section 1 \u2014 National Rail Authority",
+        "An independent National Rail Development and Mobility Authority shall plan corridors, build and modernize infrastructure, establish engineering and safety standards, coordinate state and local systems, certify equipment, maintain public rail data, supervise unified ticketing, manage strategic components, and coordinate domestic manufacturing.",
+        "Section 2 \u2014 State Capital Hubs",
+        "Every state capital shall contain a Major State Rail Hub integrating interstate trunk rail, intrastate regional rail, commuter rail, freight where appropriate, buses, municipal transit, bicycle facilities, pedestrian access, airports, ports, and emergency transport. A hub may be distributed across coordinated stations where a single terminal would create excessive congestion or vulnerability."
+      ]
+    },
+    {
+      "number": "XXXII",
+      "roman": "XXXII",
+      "title": "National Education, Child Development, Productive Learning, and School Security",
+      "slug": "article-xxxii",
+      "order": 32,
+      "summary": "Education shall prepare every child for competent adulthood, scientific and technological participation, skilled work, civic responsibility, personal independence, creativity, physical and mental health, and continued learning. Schools shall function as secure, welcoming, full-workday institutions that support working families without reducing childhood to continuous formal instruction. Section 1 \u2014 Universal Educational Access",
+      "sections": [
+        "Section 1 \u2014 Universal Educational Access",
+        "Section 2 \u2014 Developmental Structure",
+        "Section 3 \u2014 STEM Priority and Arts Foundation",
+        "Section 4 \u2014 Higher Education Choice",
+        "Section 5 \u2014 Practical Competencies",
+        "Section 6 \u2014 Full Workday Availability",
+        "Section 7 \u2014 Transportation Without Routine Drop-Off",
+        "Section 8 \u2014 Universal Workday Childcare",
+        "Section 9 \u2014 School Security Principle",
+        "Section 10 \u2014 Continuous Monitoring and Protective Staffing"
+      ],
+      "excerpt": [
+        "Education shall prepare every child for competent adulthood, scientific and technological participation, skilled work, civic responsibility, personal independence, creativity, physical and mental health, and continued learning. Schools shall function as secure, welcoming, full-workday institutions that support working families without reducing childhood to continuous formal instruction.",
+        "Section 1 \u2014 Universal Educational Access",
+        "Public education, transportation, meals, required supplies, ordinary technology, and workday childcare shall be provided without tuition. Access shall not depend on family wealth, property, disability, geography, family structure, parent citizenship, academic performance, or ability to provide daytime supervision.",
+        "Section 2 \u2014 Developmental Structure",
+        "Education shall progress through Early Childhood, Foundation, Exploratory STEM, and"
+      ]
+    },
+    {
+      "number": "XXXIII",
+      "roman": "XXXIII",
+      "title": "National Health Intelligence, De-Identified Medical Data, and Preventive Care",
+      "slug": "article-xxxiii",
+      "order": 33,
+      "summary": "The Commonwealth shall aggregate de-identified medical knowledge at national scale to improve diagnosis, treatment, prevention, mental health, public-health readiness, and reduction of comorbidities without creating a named national medical surveillance system. Section 1 \u2014 National Health Intelligence Network",
+      "sections": [
+        "Section 1 \u2014 National Health Intelligence Network",
+        "Section 2 \u2014 No Names and Minimal Identifiers",
+        "Section 3 \u2014 Birthdate Protection",
+        "Section 4 \u2014 Protected Identifier and Separate Linkage",
+        "Section 5 \u2014 State Health Data Nodes and Backups",
+        "Section 6 \u2014 Distributed Architecture",
+        "Section 7 \u2014 Permitted Medical Data",
+        "Section 8 \u2014 Research Access",
+        "Section 9 \u2014 Prohibition of Re-Identification and Commercial Sale",
+        "Section 10 \u2014 Mental Health and Genetic Protections"
+      ],
+      "excerpt": [
+        "The Commonwealth shall aggregate de-identified medical knowledge at national scale to improve diagnosis, treatment, prevention, mental health, public-health readiness, and reduction of comorbidities without creating a named national medical surveillance system.",
+        "Section 1 \u2014 National Health Intelligence Network",
+        "A distributed National Health Intelligence Network shall support diagnostic accuracy, treatment comparison, adverse-effect detection, rare-disease identification, comorbidity research, public-health planning, prevention, rehabilitation, physical health, mental health, and development of new medical methodologies.",
+        "Section 2 \u2014 No Names and Minimal Identifiers",
+        "The national analytical system shall not contain names, addresses, telephone numbers, email addresses, government identifiers, financial accounts, employer or school identity, photographs, facial-recognition data, family names, or unnecessary biometrics. The most identifying ordinary fields shall be date of birth, blood type, medically relevant biological characteristics, general geographic region, and a protected nonpublic record identifier."
+      ]
+    },
+    {
+      "number": "XXXIV",
+      "roman": "XXXIV",
+      "title": "Credit Card Regulation, Consumer Protection, and Debt Relief",
+      "slug": "article-xxxiv",
+      "order": 34,
+      "summary": "Credit cards shall operate as limited payment and short-term borrowing tools, not as permanent systems for extracting interest from consumers unable to reduce principal. This Article prohibits youth revolving debt, unfair interest, manipulative targeting, hidden fees, and indefinite minimum-payment structures while guaranteeing a standardized interestfree repayment path.",
+      "sections": [
+        "Section 1 \u2014 Minimum Age",
+        "Section 2 \u2014 Ability-to-Repay Underwriting",
+        "Section 3 \u2014 Interest-Rate Ceiling",
+        "Section 4 \u2014 Unfair Interest and Penalty Rates",
+        "Section 5 \u2014 Minimum Payment Standard",
+        "Section 6 \u2014 Twenty-Four-Month Interest-Free Benefit",
+        "Section 7 \u2014 Account Freeze and Recurring Charges",
+        "Section 8 \u2014 Hardship and Missed Payments",
+        "Section 9 \u2014 Completion and Reporting",
+        "Section 10 \u2014 Targeted Promotion Prohibition"
+      ],
+      "excerpt": [
+        "Credit cards shall operate as limited payment and short-term borrowing tools, not as permanent systems for extracting interest from consumers unable to reduce principal. This",
+        "Article prohibits youth revolving debt, unfair interest, manipulative targeting, hidden fees, and indefinite minimum-payment structures while guaranteeing a standardized interestfree repayment path.",
+        "Section 1 \u2014 Minimum Age",
+        "No person under twenty-five may open, jointly hold, guarantee, or become legally liable on a consumer credit-card account. Persons under twenty-five may use debit, prepaid accounts, non-revolving secured products, or an authorized-user card carrying no personal liability. Campus solicitation and youth-directed marketing are prohibited.",
+        "Section 2 \u2014 Ability-to-Repay Underwriting"
+      ]
+    },
+    {
+      "number": "XXXV",
+      "roman": "XXXV",
+      "title": "National Circular Sanitation, Water Conservation, and Elimination of Conventional Water-Carried Sewage",
+      "slug": "article-xxxv",
+      "order": 35,
+      "summary": "Clean water is a strategic national resource. The routine use of potable or reusable water merely to transport human waste shall be progressively eliminated. The Nation shall replace the flush, dilute, transport, treat, and discharge model with circular sanitation based on separation, concentration, pathogen destruction, recovery, reuse, resilience, and minimal residual waste. Section 1 \u2014 National Circular Sanitation Authority",
+      "sections": [
+        "Section 1 \u2014 National Circular Sanitation Authority",
+        "Section 2 \u2014 Public Health First",
+        "Section 3 \u2014 Waste-Stream Separation",
+        "Section 4 \u2014 New Construction and Major Renovation",
+        "Section 5 \u2014 Water Quality Classes and Lowest Safe Use",
+        "Section 6 \u2014 Greywater Recovery",
+        "Section 7 \u2014 Human Waste as Resource",
+        "Section 8 \u2014 Resource Recovery and Sanitation Facilities",
+        "Section 9 \u2014 Distributed and Centralized Balance",
+        "Section 10 \u2014 Industrial Pretreatment and Contaminant Responsibility"
+      ],
+      "excerpt": [
+        "Clean water is a strategic national resource. The routine use of potable or reusable water merely to transport human waste shall be progressively eliminated. The Nation shall replace the flush, dilute, transport, treat, and discharge model with circular sanitation based on separation, concentration, pathogen destruction, recovery, reuse, resilience, and minimal residual waste.",
+        "Section 1 \u2014 National Circular Sanitation Authority",
+        "An independent National Circular Sanitation Authority shall establish technical and publichealth standards, coordinate states and municipalities, fund modernization, approve technology, maintain sanitation data, certify facilities, establish contaminant limits, coordinate manufacturing, supervise pilots, enforce milestones, and ensure service continuity.",
+        "Section 2 \u2014 Public Health First",
+        "No conservation, decentralization, recovery, cost savings, or experiment shall justify exposure to untreated human waste, contaminated drinking water or food, uncontrolled pathogens, unsafe indoor conditions, or denial of sanitation. Existing systems shall remain maintained until safe replacements are constructed, tested, staffed, supplied, and certified."
+      ]
+    },
+    {
+      "number": "XXXVI",
+      "roman": "XXXVI",
+      "title": "Consumer Services, Continuing Payments, Digital Property, and Service Continuity",
+      "slug": "article-xxxvi",
+      "order": 36,
+      "summary": "Consumer services shall remain profitable because consumers continue to choose them and providers continue to deliver promised value. No business shall obtain continuing revenue primarily through confusion, artificial dependency, involuntary renewal, service regression, hidden charges, revocable digital ownership, or destruction of purchased value. Section 1 \u2014 Scope and Exclusions",
+      "sections": [
+        "Section 1 \u2014 Scope and Exclusions",
+        "Section 2 \u2014 Consumer Service Record and Dashboard",
+        "Section 3 \u2014 Price Continuity and Non-Regression",
+        "Section 4 \u2014 Genuine Higher Tiers",
+        "Section 5 \u2014 Renewal, Trials, Cancellation, and Dormant Services",
+        "Section 6 \u2014 Bundles, Embedded Features, and Dependency",
+        "Section 7 \u2014 Digital Property Purchase",
+        "Section 8 \u2014 No Revocation of Digital Licenses",
+        "Section 9 \u2014 Offline Access and Local Operation",
+        "Section 10 \u2014 Online Service Continuity Plan"
+      ],
+      "excerpt": [
+        "Consumer services shall remain profitable because consumers continue to choose them and providers continue to deliver promised value. No business shall obtain continuing revenue primarily through confusion, artificial dependency, involuntary renewal, service regression, hidden charges, revocable digital ownership, or destruction of purchased value.",
+        "Section 1 \u2014 Scope and Exclusions",
+        "This Article governs subscriptions, memberships, automatic renewals, digital platforms, software and cloud services, streaming, telecommunications, internet access, gaming, data storage, AI services, monitoring, maintenance plans, repair plans, support programs, delivery memberships, fitness and recreation memberships, education services, transportation memberships, connected-vehicle services, recurring deliveries, and similar continuing or access-based consumer arrangements. It does not govern rent, mortgages, lending, credit agreements, insurance, taxes, government fees, court-ordered payments, or ordinary installment purchases resulting in ownership without a continuing service.",
+        "Section 2 \u2014 Consumer Service Record and Dashboard",
+        "Every covered service shall maintain a standardized record stating provider, service, price, billing frequency, enrollment, renewal, benefits, limitations, advertising, data practices, cancellation, refunds, change history, and consent history. An interoperable national dashboard shall allow consumers to view active services, monthly and annualized cost, billing and renewal dates, trials, changes, and cancellation methods without permitting government sale or commercial profiling of preferences."
+      ]
+    }
+  ],
+  "identity": {
+    "name": "National Identity",
+    "slug": "identity",
+    "source": "Article XXXVII, presented here as an identity page rather than an article page.",
+    "title": "National Identity, Flag, and the American Builder Beaver",
+    "summary": "The national identity of the Commonwealth reflects construction, continuity, measurement, productive labor, resource stewardship, and resilience.",
+    "sections": [
+      "Section 1 \u2014 National Animal",
+      "Section 2 \u2014 Meaning of the American Builder Beaver",
+      "Section 3 \u2014 Use of the Beaver",
+      "Official design representation - proportion 2:3",
+      "Section 4 \u2014 Flag Design Specification",
+      "Section 5 \u2014 Flag Reproduction"
+    ],
+    "excerpt": [
+      "The constitutional order possesses national symbols reflecting construction, continuity, measurement, productive labor, resource stewardship, and resilience rather than conquest or domination.",
+      "The American Beaver, Castor canadensis, is designated the national animal of the Commonwealth and may be formally styled the American Builder Beaver in constitutional, ceremonial, educational, and governmental use.",
+      "The American Builder Beaver represents practical intelligence, repair, water stewardship, habitat construction, intergenerational work, and patient public resilience.",
+      "The beaver may appear on the national seal, educational materials, conservation programs, civic awards, public works insignia, and official ceremonial emblems.",
+      "The national flag has a 2:3 proportion, a deep midnight-blue field, five equal white vertical pillars, a silver ring, an eight-point white star, and a red foundation band."
+    ],
+    "flagMeaning": "The flag uses a deep midnight-blue field for continuity and ordered public life, five equal white pillars for the five age cohorts, a silver ring for circular stewardship and institutional continuity, an eight-point white star for common purpose, and a red foundation band for sacrifice and civic duty.",
+    "animal": "The American Beaver, formally styled the American Builder Beaver, is the national animal and represents construction, patience, practical intelligence, restoration, water stewardship, and commonwealth-building."
+  },
+  "institutions": [
+    {
+      "name": "Five-Cohort Executive Council",
+      "slug": "five-cohort-executive-council",
+      "description": "Collective national executive authority, one elected leader per age cohort.",
+      "article": "IV",
+      "articleTitle": "The Generational Executive Council",
+      "sourceSlug": "article-iv",
+      "kind": "institution"
+    },
+    {
+      "name": "Assembly of State Delegations",
+      "slug": "assembly-of-state-delegations",
+      "description": "Legislative authority organized by state delegations and age-banded representation.",
+      "article": "V",
+      "articleTitle": "The Assembly of State Delegations",
+      "sourceSlug": "article-v",
+      "kind": "institution"
+    },
+    {
+      "name": "Judiciary and Constitutional Balance",
+      "slug": "judiciary-and-constitutional-balance",
+      "description": "The constitutional judicial branch, including local, appellate, national, and supreme constitutional courts.",
+      "article": "VII",
+      "articleTitle": "The Judiciary and Constitutional Balance",
+      "sourceSlug": "article-vii",
+      "kind": "institution"
+    },
+    {
+      "name": "State and Local Courts",
+      "slug": "state-and-local-courts",
+      "description": "Trial and local judicial forums within the distributed court structure.",
+      "article": "VII",
+      "articleTitle": "The Judiciary and Constitutional Balance",
+      "sourceSlug": "article-vii",
+      "kind": "institution"
+    },
+    {
+      "name": "Regional Appellate Courts",
+      "slug": "regional-appellate-courts",
+      "description": "Intermediate appellate review across regional jurisdictions.",
+      "article": "VII",
+      "articleTitle": "The Judiciary and Constitutional Balance",
+      "sourceSlug": "article-vii",
+      "kind": "institution"
+    },
+    {
+      "name": "National High Court",
+      "slug": "national-high-court",
+      "description": "National judicial review beneath the Constitutional Supreme Court.",
+      "article": "VII",
+      "articleTitle": "The Judiciary and Constitutional Balance",
+      "sourceSlug": "article-vii",
+      "kind": "institution"
+    },
+    {
+      "name": "Constitutional Supreme Court",
+      "slug": "constitutional-supreme-court",
+      "description": "Final constitutional review and structural balance for the Commonwealth.",
+      "article": "VII",
+      "articleTitle": "The Judiciary and Constitutional Balance",
+      "sourceSlug": "article-vii",
+      "kind": "institution"
+    },
+    {
+      "name": "National Court for Grave Crimes",
+      "slug": "national-court-for-grave-crimes",
+      "description": "Specialized trial forum for nationally grave offenses with full due process and automatic appeal.",
+      "article": "VII",
+      "articleTitle": "The Judiciary and Constitutional Balance",
+      "sourceSlug": "article-vii",
+      "kind": "institution"
+    },
+    {
+      "name": "States and Municipalities",
+      "slug": "states-and-municipalities",
+      "description": "Distributed administration and retained local authority under the constitutional order.",
+      "article": "XXI",
+      "articleTitle": "States, Municipalities, and Distributed Administration",
+      "sourceSlug": "article-xxi",
+      "kind": "institution"
+    }
+  ],
+  "agencies": [
+    {
+      "name": "Office of National Performance and Accountability",
+      "slug": "office-of-national-performance-and-accountability",
+      "description": "ONPA independently measures effectiveness, efficiency, fiscal performance, delivery, transparency, and intergenerational effects.",
+      "article": "IX",
+      "articleTitle": "The Office of National Performance and Accountability",
+      "sourceSlug": "article-ix",
+      "kind": "agency"
+    },
+    {
+      "name": "National Revenue Service",
+      "slug": "national-revenue-service",
+      "description": "A simplified national revenue institution for individual taxation, public finance, and protected social-support collection.",
+      "article": "XI",
+      "articleTitle": "The National Revenue Service and Public Finance",
+      "sourceSlug": "article-xi",
+      "kind": "agency"
+    },
+    {
+      "name": "Economic Registry",
+      "slug": "economic-registry",
+      "description": "A state and municipal registry for aggregate local productive capacity, employment, commerce, and economic conditions.",
+      "article": "XII",
+      "articleTitle": "The Local Productive Economy, Employment Registry, and Consumer Commerce",
+      "sourceSlug": "article-xii",
+      "kind": "agency"
+    },
+    {
+      "name": "Employment Registry",
+      "slug": "employment-registry",
+      "description": "The employment-facing registry for productive work opportunities, local hiring, and labor-market coordination.",
+      "article": "XII",
+      "articleTitle": "The Local Productive Economy, Employment Registry, and Consumer Commerce",
+      "sourceSlug": "article-xii",
+      "kind": "agency"
+    },
+    {
+      "name": "National Talent Service",
+      "slug": "national-talent-service",
+      "description": "A public talent service for linking skills, training, and useful work within the local productive economy.",
+      "article": "XII",
+      "articleTitle": "The Local Productive Economy, Employment Registry, and Consumer Commerce",
+      "sourceSlug": "article-xii",
+      "kind": "agency"
+    },
+    {
+      "name": "National Agency for Technological Advancement and Human Safety",
+      "slug": "national-agency-for-technological-advancement-and-human-safety",
+      "description": "The agency charged with accelerating technological advancement while protecting human safety and child development.",
+      "article": "XIV",
+      "articleTitle": "Technological Advancement and Human Safety",
+      "sourceSlug": "article-xiv",
+      "kind": "agency"
+    },
+    {
+      "name": "Office of Human Impact",
+      "slug": "office-of-human-impact",
+      "description": "An independent office investigating injury, disease, displacement, dependency, manipulation, or child-development harm from technology.",
+      "article": "XIV",
+      "articleTitle": "Technological Advancement and Human Safety",
+      "sourceSlug": "article-xiv",
+      "kind": "agency"
+    },
+    {
+      "name": "Central Materials Recovery and Recycling Authority",
+      "slug": "central-materials-recovery-and-recycling-authority",
+      "description": "The authority establishing material recovery standards, producer responsibility, reuse, recycling, and landfill elimination.",
+      "article": "XV",
+      "articleTitle": "Material Circulation, Resource Recovery, and the Elimination of Landfills",
+      "sourceSlug": "article-xv",
+      "kind": "agency"
+    },
+    {
+      "name": "National Continuity and Infrastructure Stability Authority",
+      "slug": "national-continuity-and-infrastructure-stability-authority",
+      "description": "The authority maintaining minimum infrastructure standards, continuity cells, reserves, degraded-operation plans, and restoration readiness.",
+      "article": "XVI",
+      "articleTitle": "Homeland Infrastructure Stability and Civilization Continuity",
+      "sourceSlug": "article-xvi",
+      "kind": "agency"
+    },
+    {
+      "name": "Regional Survival Commands",
+      "slug": "regional-survival-commands",
+      "description": "Regional operational commands within Survival Mode for continuity, restoration, and emergency distribution.",
+      "article": "XVII",
+      "articleTitle": "National Survival Mode and the Preservation of Civil Society",
+      "sourceSlug": "article-xvii",
+      "kind": "agency"
+    },
+    {
+      "name": "Geographic Continuity Cells",
+      "slug": "geographic-continuity-cells",
+      "description": "Local continuity units for degraded operations, restoration sequencing, and civil-society preservation.",
+      "article": "XVII",
+      "articleTitle": "National Survival Mode and the Preservation of Civil Society",
+      "sourceSlug": "article-xvii",
+      "kind": "agency"
+    },
+    {
+      "name": "National Homelessness Elimination Program",
+      "slug": "national-homelessness-elimination-program",
+      "description": "A national program to eliminate homelessness through shelter, food, water, sanitation, medical care, and safe placement.",
+      "article": "XXIX",
+      "articleTitle": "Domestic Human Security, Homelessness Elimination, and Suspension of Foreign Aid",
+      "sourceSlug": "article-xxix",
+      "kind": "agency"
+    },
+    {
+      "name": "National Safe Haven Program",
+      "slug": "national-safe-haven-program",
+      "description": "A secure, clean, non-carceral housing and stabilization program for people requiring protective placement.",
+      "article": "XXIX",
+      "articleTitle": "Domestic Human Security, Homelessness Elimination, and Suspension of Foreign Aid",
+      "sourceSlug": "article-xxix",
+      "kind": "agency"
+    },
+    {
+      "name": "National Housing Authority",
+      "slug": "national-housing-authority",
+      "description": "The authority for ownership limits, lawful prices, nonprofit rent, first ownership, and commercial conversion into housing.",
+      "article": "XXX",
+      "articleTitle": "Housing Access, Limited Ownership, Nonprofit Transfer, and Income-Based Occupancy",
+      "sourceSlug": "article-xxx",
+      "kind": "agency"
+    },
+    {
+      "name": "National Residential Exchange",
+      "slug": "national-residential-exchange",
+      "description": "A housing exchange for lawful transfers, nonprofit conversion, and anti-speculation residential movement.",
+      "article": "XXX",
+      "articleTitle": "Housing Access, Limited Ownership, Nonprofit Transfer, and Income-Based Occupancy",
+      "sourceSlug": "article-xxx",
+      "kind": "agency"
+    },
+    {
+      "name": "National Rail Development and Mobility Authority",
+      "slug": "national-rail-development-and-mobility-authority",
+      "description": "The independent authority planning corridors, state capital hubs, national rail lines, mobility access, and interoperability.",
+      "article": "XXXI",
+      "articleTitle": "National Rail Revitalization, Mobility Access, and Transportation Independence",
+      "sourceSlug": "article-xxxi",
+      "kind": "agency"
+    },
+    {
+      "name": "Rail Technology Program",
+      "slug": "rail-technology-program",
+      "description": "A technology program for rail design, manufacturing, repair, control systems, safety, and continuity.",
+      "article": "XXXI",
+      "articleTitle": "National Rail Revitalization, Mobility Access, and Transportation Independence",
+      "sourceSlug": "article-xxxi",
+      "kind": "agency"
+    },
+    {
+      "name": "Retired Veteran School Protection Corps",
+      "slug": "retired-veteran-school-protection-corps",
+      "description": "A school protection corps using qualified retired veterans under training, oversight, and civilian educational authority.",
+      "article": "XXXII",
+      "articleTitle": "National Education, Child Development, Productive Learning, and School Security",
+      "sourceSlug": "article-xxxii",
+      "kind": "agency"
+    },
+    {
+      "name": "National Health Intelligence Network",
+      "slug": "national-health-intelligence-network",
+      "description": "A de-identified medical data network with state nodes, national analysis, independent backups, and research protections.",
+      "article": "XXXIII",
+      "articleTitle": "National Health Intelligence, De-Identified Medical Data, and Preventive Care",
+      "sourceSlug": "article-xxxiii",
+      "kind": "agency"
+    },
+    {
+      "name": "National Health Data Council",
+      "slug": "national-health-data-council",
+      "description": "An oversight council including clinicians, mental-health professionals, patient advocates, data experts, and public representatives.",
+      "article": "XXXIII",
+      "articleTitle": "National Health Intelligence, De-Identified Medical Data, and Preventive Care",
+      "sourceSlug": "article-xxxiii",
+      "kind": "agency"
+    },
+    {
+      "name": "National Circular Sanitation Authority",
+      "slug": "national-circular-sanitation-authority",
+      "description": "The authority leading the transition from water-carried sewage to circular sanitation, water conservation, and resource recovery.",
+      "article": "XXXV",
+      "articleTitle": "National Circular Sanitation, Water Conservation, and Elimination of Conventional Water-Carried Sewage",
+      "sourceSlug": "article-xxxv",
+      "kind": "agency"
+    }
+  ]
+}

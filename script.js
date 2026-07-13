@@ -1,29 +1,23 @@
 const header = document.querySelector("[data-header]");
-const promptButtons = document.querySelectorAll("[data-copy]");
+const menus = document.querySelectorAll(".nav-menu");
 
 const syncHeader = () => {
-  header.classList.toggle("is-scrolled", window.scrollY > 12);
+  header?.classList.toggle("is-scrolled", window.scrollY > 8);
 };
 
 syncHeader();
 window.addEventListener("scroll", syncHeader, { passive: true });
 
-promptButtons.forEach((button) => {
-  button.addEventListener("click", async () => {
-    const original = button.textContent;
-
-    try {
-      await navigator.clipboard.writeText(button.dataset.copy);
-      button.textContent = "Copied";
-      button.classList.add("is-copied");
-    } catch {
-      button.textContent = button.dataset.copy;
-      button.classList.add("is-copied");
-    }
-
-    window.setTimeout(() => {
-      button.textContent = original;
-      button.classList.remove("is-copied");
-    }, 1600);
+menus.forEach((menu) => {
+  menu.addEventListener("toggle", () => {
+    if (!menu.open) return;
+    menus.forEach((other) => {
+      if (other !== menu) other.removeAttribute("open");
+    });
   });
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest(".nav-menu")) return;
+  menus.forEach((menu) => menu.removeAttribute("open"));
 });
