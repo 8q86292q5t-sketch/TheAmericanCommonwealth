@@ -512,17 +512,16 @@
       "title": "The Generational Cohorts",
       "slug": "article-iii",
       "order": 3,
-      "summary": "For executive representation, every citizen belongs to exactly one age cohort according to age on the official election qualification date. Cohort membership affects executive voting and constitutionally authorized representative structures only; it shall not limit equal civil rights. Cohort Ages Representative Perspective",
+      "summary": "For executive representation, every citizen belongs to exactly one age cohort according to age on the official election qualification date. Cohort membership affects executive voting and constitutionally authorized representative structures only; it shall not limit equal civil rights.",
       "sections": [
-        "Cohort Ages Representative Perspective",
+        "Cohort representative perspectives",
         "Transition Between Cohorts"
       ],
       "excerpt": [
         "For executive representation, every citizen belongs to exactly one age cohort according to age on the official election qualification date. Cohort membership affects executive voting and constitutionally authorized representative structures only; it shall not limit equal civil rights.",
-        "Cohort Ages Representative Perspective",
-        "I 18\u201327 Education, technological adaptation, entry into work, housing access, and future generations",
-        "II 28\u201338 Families, workforce mobility, entrepreneurship, childcare, and household formation",
-        "III 39\u201349 Production, infrastructure, industrial coordination, and institutional management"
+        "Cohort representative perspectives",
+        "Transition Between Cohorts",
+        "A public official entering a new cohort acquires no automatic right to a new office. The official may compete in the next eligible election, and the complete public performance record shall remain permanently attached to the candidacy."
       ],
       "textBlocks": [
         {
@@ -530,12 +529,40 @@
           "text": "For executive representation, every citizen belongs to exactly one age cohort according to age on the official election qualification date. Cohort membership affects executive voting and constitutionally authorized representative structures only; it shall not limit equal civil rights."
         },
         {
-          "type": "heading",
-          "text": "Cohort Ages Representative Perspective"
-        },
-        {
-          "type": "paragraph",
-          "text": "I 18-27 Education, technological adaptation, entry into work, housing access, and future generations II 28-38 Families, workforce mobility, entrepreneurship, childcare, and household formation III 39-49 Production, infrastructure, industrial coordination, and institutional management IV 50-59 National resilience, foreign affairs, defense, healthcare systems, and long-term strategy V 60 and older Retirement, fiscal continuity, institutional memory, and intergenerational stewardship"
+          "type": "table",
+          "caption": "Cohort representative perspectives",
+          "headers": [
+            "Cohort",
+            "Ages",
+            "Representative perspective"
+          ],
+          "rows": [
+            [
+              "I",
+              "18-27",
+              "Education, technological adaptation, entry into work, housing access, and future generations"
+            ],
+            [
+              "II",
+              "28-38",
+              "Families, workforce mobility, entrepreneurship, childcare, and household formation"
+            ],
+            [
+              "III",
+              "39-49",
+              "Production, infrastructure, industrial coordination, and institutional management"
+            ],
+            [
+              "IV",
+              "50-59",
+              "National resilience, foreign affairs, defense, healthcare systems, and long-term strategy"
+            ],
+            [
+              "V",
+              "60 and older",
+              "Retirement, fiscal continuity, institutional memory, and intergenerational stewardship"
+            ]
+          ]
         },
         {
           "type": "heading",
@@ -548,12 +575,17 @@
       ],
       "fullText": [
         "For executive representation, every citizen belongs to exactly one age cohort according to age on the official election qualification date. Cohort membership affects executive voting and constitutionally authorized representative structures only; it shall not limit equal civil rights.",
-        "Cohort Ages Representative Perspective",
-        "I 18-27 Education, technological adaptation, entry into work, housing access, and future generations II 28-38 Families, workforce mobility, entrepreneurship, childcare, and household formation III 39-49 Production, infrastructure, industrial coordination, and institutional management IV 50-59 National resilience, foreign affairs, defense, healthcare systems, and long-term strategy V 60 and older Retirement, fiscal continuity, institutional memory, and intergenerational stewardship",
+        "Cohort representative perspectives",
+        "Cohort | Ages | Representative perspective",
+        "I | 18-27 | Education, technological adaptation, entry into work, housing access, and future generations",
+        "II | 28-38 | Families, workforce mobility, entrepreneurship, childcare, and household formation",
+        "III | 39-49 | Production, infrastructure, industrial coordination, and institutional management",
+        "IV | 50-59 | National resilience, foreign affairs, defense, healthcare systems, and long-term strategy",
+        "V | 60 and older | Retirement, fiscal continuity, institutional memory, and intergenerational stewardship",
         "Transition Between Cohorts",
         "A public official entering a new cohort acquires no automatic right to a new office. The official may compete in the next eligible election, and the complete public performance record shall remain permanently attached to the candidacy."
       ],
-      "detailCount": 5
+      "detailCount": 10
     },
     {
       "number": "IV",
@@ -561,20 +593,17 @@
       "title": "The Generational Executive Council",
       "slug": "article-iv",
       "order": 4,
-      "summary": "Collective Executive Authority Executive authority is vested collectively in five Cohort Executives, one elected by each cohort. Each Executive possesses one equal vote. No Executive may exercise unilateral national authority except where this Constitution expressly permits immediate temporary action.",
+      "summary": "Executive authority is vested collectively in five Cohort Executives, one elected by each cohort. Each Executive possesses one equal vote. No Executive may exercise unilateral national authority except where this Constitution expressly permits immediate temporary action.",
       "sections": [
         "Collective Executive Authority",
-        "Decision Required Approval",
-        "Ordinary executive action Three of five Executives",
-        "Assembly",
+        "Executive approval thresholds",
         "Terms, Stability, and Recall"
       ],
       "excerpt": [
         "Collective Executive Authority",
         "Executive authority is vested collectively in five Cohort Executives, one elected by each cohort. Each Executive possesses one equal vote. No Executive may exercise unilateral national authority except where this Constitution expressly permits immediate temporary action.",
-        "Decision Required Approval",
-        "Ordinary executive action Three of five Executives",
-        "Major national program, borrowing, extended Four of five Executives emergency, or foreign military deployment"
+        "Executive approval thresholds",
+        "Terms, Stability, and Recall"
       ],
       "textBlocks": [
         {
@@ -586,20 +615,30 @@
           "text": "Executive authority is vested collectively in five Cohort Executives, one elected by each cohort. Each Executive possesses one equal vote. No Executive may exercise unilateral national authority except where this Constitution expressly permits immediate temporary action."
         },
         {
-          "type": "heading",
-          "text": "Decision Required Approval"
-        },
-        {
-          "type": "paragraph",
-          "text": "Ordinary executive action Three of five Executives Major national program, borrowing, extended Four of five Executives emergency, or foreign military deployment Offensive war Unanimous Executive Council and two-thirds of the"
-        },
-        {
-          "type": "heading",
-          "text": "Assembly"
-        },
-        {
-          "type": "paragraph",
-          "text": "Immediate defensive action Four Executives, subject to legislative review and automatic expiration"
+          "type": "table",
+          "caption": "Executive approval thresholds",
+          "headers": [
+            "Decision",
+            "Required approval"
+          ],
+          "rows": [
+            [
+              "Ordinary executive action",
+              "Three of five Executives"
+            ],
+            [
+              "Major national program, borrowing, extended emergency, or foreign military deployment",
+              "Four of five Executives"
+            ],
+            [
+              "Offensive war",
+              "Unanimous Executive Council and two-thirds of the Assembly"
+            ],
+            [
+              "Immediate defensive action",
+              "Four Executives, subject to legislative review and automatic expiration"
+            ]
+          ]
         },
         {
           "type": "heading",
@@ -607,50 +646,37 @@
         },
         {
           "type": "paragraph",
-          "text": "6. Each Executive serves a five-year term, and one cohort election occurs each year."
+          "text": "Each Executive serves a five-year term, and one cohort election occurs each year."
         },
         {
           "type": "paragraph",
-          "text": "7. The first thirty months are a protected governing period during which removal may"
+          "text": "The first thirty months are a protected governing period during which removal may occur only for crime, corruption, incapacity, treason, grave ethical misconduct, constitutional violation, or deliberate falsification of government information."
         },
         {
           "type": "paragraph",
-          "text": "occur only for crime, corruption, incapacity, treason, grave ethical misconduct, constitutional violation, or deliberate falsification of government information."
+          "text": "After thirty months, sustained performance failure may trigger a public confidence referendum under Article IX."
         },
         {
           "type": "paragraph",
-          "text": "8. After thirty months, sustained performance failure may trigger a public confidence"
-        },
-        {
-          "type": "paragraph",
-          "text": "referendum under Article IX."
-        },
-        {
-          "type": "paragraph",
-          "text": "9. No person may serve more than two consecutive terms in the same cohort or more than"
-        },
-        {
-          "type": "paragraph",
-          "text": "twenty years total as a Cohort Executive."
+          "text": "No person may serve more than two consecutive terms in the same cohort or more than twenty years total as a Cohort Executive."
         }
       ],
       "fullText": [
         "Collective Executive Authority",
         "Executive authority is vested collectively in five Cohort Executives, one elected by each cohort. Each Executive possesses one equal vote. No Executive may exercise unilateral national authority except where this Constitution expressly permits immediate temporary action.",
-        "Decision Required Approval",
-        "Ordinary executive action Three of five Executives Major national program, borrowing, extended Four of five Executives emergency, or foreign military deployment Offensive war Unanimous Executive Council and two-thirds of the",
-        "Assembly",
-        "Immediate defensive action Four Executives, subject to legislative review and automatic expiration",
+        "Executive approval thresholds",
+        "Decision | Required approval",
+        "Ordinary executive action | Three of five Executives",
+        "Major national program, borrowing, extended emergency, or foreign military deployment | Four of five Executives",
+        "Offensive war | Unanimous Executive Council and two-thirds of the Assembly",
+        "Immediate defensive action | Four Executives, subject to legislative review and automatic expiration",
         "Terms, Stability, and Recall",
-        "6. Each Executive serves a five-year term, and one cohort election occurs each year.",
-        "7. The first thirty months are a protected governing period during which removal may",
-        "occur only for crime, corruption, incapacity, treason, grave ethical misconduct, constitutional violation, or deliberate falsification of government information.",
-        "8. After thirty months, sustained performance failure may trigger a public confidence",
-        "referendum under Article IX.",
-        "9. No person may serve more than two consecutive terms in the same cohort or more than",
-        "twenty years total as a Cohort Executive."
+        "Each Executive serves a five-year term, and one cohort election occurs each year.",
+        "The first thirty months are a protected governing period during which removal may occur only for crime, corruption, incapacity, treason, grave ethical misconduct, constitutional violation, or deliberate falsification of government information.",
+        "After thirty months, sustained performance failure may trigger a public confidence referendum under Article IX.",
+        "No person may serve more than two consecutive terms in the same cohort or more than twenty years total as a Cohort Executive."
       ],
-      "detailCount": 14
+      "detailCount": 13
     },
     {
       "number": "V",
@@ -658,13 +684,10 @@
       "title": "The Assembly of State Delegations",
       "slug": "article-v",
       "order": 5,
-      "summary": "Tripartite State Representation Each state elects a single State Delegation composed of three delegates elected from separate legislative age bands. The delegation acts as one constitutional unit and casts one indivisible state vote.",
+      "summary": "Each state elects a single State Delegation composed of three delegates elected from separate legislative age bands. The delegation acts as one constitutional unit and casts one indivisible state vote.",
       "sections": [
         "Tripartite State Representation",
-        "Delegate Age Band",
-        "Emerging Delegate 18\u201334",
-        "Established Delegate 35\u201354",
-        "Senior Delegate 55 and older",
+        "Delegation age bands",
         "Presence, Deliberation, and Unanimity",
         "Deadlock Procedure and Snap Election",
         "Double-Majority Legislative Passage",
@@ -673,9 +696,9 @@
       "excerpt": [
         "Tripartite State Representation",
         "Each state elects a single State Delegation composed of three delegates elected from separate legislative age bands. The delegation acts as one constitutional unit and casts one indivisible state vote.",
-        "Delegate Age Band",
-        "Emerging Delegate 18\u201334",
-        "Established Delegate 35\u201354"
+        "Delegation age bands",
+        "Presence, Deliberation, and Unanimity",
+        "No substantive governmental deliberation, negotiation, testimony, amendment, commitment, recommendation, or vote may occur unless all three delegates are simultaneously present and the meeting is entered into the official record. Administrative scheduling and non-substantive staff coordination are permitted. Every State Delegation decision requires unanimity. A delegation may record only Approval, Rejection, Abstention, or Unable to Reach Agreement. No divided or proportional vote is recognized."
       ],
       "textBlocks": [
         {
@@ -687,20 +710,26 @@
           "text": "Each state elects a single State Delegation composed of three delegates elected from separate legislative age bands. The delegation acts as one constitutional unit and casts one indivisible state vote."
         },
         {
-          "type": "heading",
-          "text": "Delegate Age Band"
-        },
-        {
-          "type": "heading",
-          "text": "Emerging Delegate 18-34"
-        },
-        {
-          "type": "heading",
-          "text": "Established Delegate 35-54"
-        },
-        {
-          "type": "paragraph",
-          "text": "Senior Delegate 55 and older"
+          "type": "table",
+          "caption": "Delegation age bands",
+          "headers": [
+            "Delegate",
+            "Age band"
+          ],
+          "rows": [
+            [
+              "Emerging Delegate",
+              "18-34"
+            ],
+            [
+              "Established Delegate",
+              "35-54"
+            ],
+            [
+              "Senior Delegate",
+              "55 and older"
+            ]
+          ]
         },
         {
           "type": "heading",
@@ -716,47 +745,27 @@
         },
         {
           "type": "paragraph",
-          "text": "10. Following an initial failed vote, the delegation observes a seventy-two-hour cooling"
+          "text": "Following an initial failed vote, the delegation observes a seventy-two-hour cooling period."
         },
         {
           "type": "paragraph",
-          "text": "period."
+          "text": "A second formal session shall occur, followed by a concise public deadlock statement from each delegate if unanimity remains impossible."
         },
         {
           "type": "paragraph",
-          "text": "11. A second formal session shall occur, followed by a concise public deadlock statement"
+          "text": "A mediated session shall occur within seven days."
         },
         {
           "type": "paragraph",
-          "text": "from each delegate if unanimity remains impossible."
+          "text": "Three major unresolved deadlocks within twelve months, failure to perform constitutional duties, joint request by two delegates, a lawful recall petition, or a Constitutional Court finding of deliberate obstruction may trigger a snap election."
         },
         {
           "type": "paragraph",
-          "text": "12. A mediated session shall occur within seven days."
+          "text": "A snap election contests all three seats. No single delegate may be removed merely because the other two disagree."
         },
         {
           "type": "paragraph",
-          "text": "13. Three major unresolved deadlocks within twelve months, failure to perform"
-        },
-        {
-          "type": "paragraph",
-          "text": "constitutional duties, joint request by two delegates, a lawful recall petition, or a Constitutional Court finding of deliberate obstruction may trigger a snap election."
-        },
-        {
-          "type": "paragraph",
-          "text": "14. A snap election contests all three seats. No single delegate may be removed merely"
-        },
-        {
-          "type": "paragraph",
-          "text": "because the other two disagree."
-        },
-        {
-          "type": "paragraph",
-          "text": "15. No state may conduct more than one delegation snap election in twelve months."
-        },
-        {
-          "type": "paragraph",
-          "text": "Continued deadlock thereafter results in abstention until the next regular election."
+          "text": "No state may conduct more than one delegation snap election in twelve months. Continued deadlock thereafter results in abstention until the next regular election."
         },
         {
           "type": "heading",
@@ -778,30 +787,26 @@
       "fullText": [
         "Tripartite State Representation",
         "Each state elects a single State Delegation composed of three delegates elected from separate legislative age bands. The delegation acts as one constitutional unit and casts one indivisible state vote.",
-        "Delegate Age Band",
-        "Emerging Delegate 18-34",
-        "Established Delegate 35-54",
-        "Senior Delegate 55 and older",
+        "Delegation age bands",
+        "Delegate | Age band",
+        "Emerging Delegate | 18-34",
+        "Established Delegate | 35-54",
+        "Senior Delegate | 55 and older",
         "Presence, Deliberation, and Unanimity",
         "No substantive governmental deliberation, negotiation, testimony, amendment, commitment, recommendation, or vote may occur unless all three delegates are simultaneously present and the meeting is entered into the official record. Administrative scheduling and non-substantive staff coordination are permitted. Every State Delegation decision requires unanimity. A delegation may record only Approval, Rejection, Abstention, or Unable to Reach Agreement. No divided or proportional vote is recognized.",
         "Deadlock Procedure and Snap Election",
-        "10. Following an initial failed vote, the delegation observes a seventy-two-hour cooling",
-        "period.",
-        "11. A second formal session shall occur, followed by a concise public deadlock statement",
-        "from each delegate if unanimity remains impossible.",
-        "12. A mediated session shall occur within seven days.",
-        "13. Three major unresolved deadlocks within twelve months, failure to perform",
-        "constitutional duties, joint request by two delegates, a lawful recall petition, or a Constitutional Court finding of deliberate obstruction may trigger a snap election.",
-        "14. A snap election contests all three seats. No single delegate may be removed merely",
-        "because the other two disagree.",
-        "15. No state may conduct more than one delegation snap election in twelve months.",
-        "Continued deadlock thereafter results in abstention until the next regular election.",
+        "Following an initial failed vote, the delegation observes a seventy-two-hour cooling period.",
+        "A second formal session shall occur, followed by a concise public deadlock statement from each delegate if unanimity remains impossible.",
+        "A mediated session shall occur within seven days.",
+        "Three major unresolved deadlocks within twelve months, failure to perform constitutional duties, joint request by two delegates, a lawful recall petition, or a Constitutional Court finding of deliberate obstruction may trigger a snap election.",
+        "A snap election contests all three seats. No single delegate may be removed merely because the other two disagree.",
+        "No state may conduct more than one delegation snap election in twelve months. Continued deadlock thereafter results in abstention until the next regular election.",
         "Double-Majority Legislative Passage",
         "Ordinary legislation requires approval by a majority of all state delegations and by delegations representing a majority of the national population. Taxation, borrowing, war, constitutional amendment, emergency authority, and removal proceedings require higher thresholds established by this Constitution.",
         "Restriction on Executive Service",
         "A person elected to a State Delegation may not serve as a Cohort Executive until reaching Cohort V and completing a two-year separation period after legislative service. Legislative office creates no executive preference or automatic qualification."
       ],
-      "detailCount": 24
+      "detailCount": 20
     },
     {
       "number": "VI",
@@ -1703,16 +1708,15 @@
       "order": 14,
       "summary": "The National Agency for Technological Advancement and Human Safety shall accelerate technology that measurably improves scientific capability, prosperity, productivity, human welfare, medicine, infrastructure, or national resilience while identifying and reducing physical, psychological, developmental, economic, environmental, and societal harms. Neither advancement nor safety automatically dominates; the objective is maximum longterm societal benefit consistent with liberty.",
       "sections": [
+        "Agency and Dual Mandate",
         "Freedom of Innovation",
         "National Talent Service and Challenges",
         "Human Impact Office",
         "Children\u2019s Technology Protection",
         "Impact Classification and Advancement Zones",
-        "Class Meaning Treatment",
-        "T0 Minimal societal risk No intervention",
-        "T1 Limited individual risk Monitoring",
-        "T2 Significant population exposure Mandatory impact reporting",
-        "Technology National Action Records"
+        "Impact classification and treatment",
+        "Technology National Action Records",
+        "Public Technology and Capture Prevention"
       ],
       "excerpt": [
         "The National Agency for Technological Advancement and Human Safety shall accelerate technology that measurably improves scientific capability, prosperity, productivity, human welfare, medicine, infrastructure, or national resilience while identifying and reducing physical, psychological, developmental, economic, environmental, and societal harms.",
@@ -1767,12 +1771,44 @@
           "text": "Impact Classification and Advancement Zones"
         },
         {
-          "type": "heading",
-          "text": "Class Meaning Treatment"
+          "type": "table",
+          "caption": "Impact classification and treatment",
+          "headers": [
+            "Class",
+            "Meaning",
+            "Treatment"
+          ],
+          "rows": [
+            [
+              "T0",
+              "Minimal societal risk",
+              "No intervention"
+            ],
+            [
+              "T1",
+              "Limited individual risk",
+              "Monitoring"
+            ],
+            [
+              "T2",
+              "Significant population exposure",
+              "Mandatory impact reporting"
+            ],
+            [
+              "T3",
+              "Potential developmental, psychological, economic, or physical harm",
+              "Controlled deployment and independent testing"
+            ],
+            [
+              "T4",
+              "Potential catastrophic or irreversible harm",
+              "National authorization required"
+            ]
+          ]
         },
         {
           "type": "paragraph",
-          "text": "T0 Minimal societal risk No intervention T1 Limited individual risk Monitoring T2 Significant population exposure Mandatory impact reporting T3 Potential developmental, Controlled deployment and psychological, economic, or independent testing physical harm T4 Potential catastrophic or National authorization required irreversible harm Voluntary Technology Advancement Zones may permit accelerated testing with informed consent, temporary regulatory flexibility, anonymized outcome data, ONPA measurement, and full constitutional protection."
+          "text": "Voluntary Technology Advancement Zones may permit accelerated testing with informed consent, temporary regulatory flexibility, anonymized outcome data, ONPA measurement, and full constitutional protection."
         },
         {
           "type": "heading",
@@ -1803,14 +1839,20 @@
         "Children\u2019s Technology Protection",
         "Technologies knowingly designed for, marketed to, or substantially used by children are subject to heightened review of addictive design, compulsive notifications, infinite scrolling, targeted advertising, behavioral experimentation, data collection, algorithmic exposure, account deletion, and repeated recommendation of harmful material. Government shall regulate exploitative mechanisms, not lawful ideas, beliefs, inquiry, or discussion.",
         "Impact Classification and Advancement Zones",
-        "Class Meaning Treatment",
-        "T0 Minimal societal risk No intervention T1 Limited individual risk Monitoring T2 Significant population exposure Mandatory impact reporting T3 Potential developmental, Controlled deployment and psychological, economic, or independent testing physical harm T4 Potential catastrophic or National authorization required irreversible harm Voluntary Technology Advancement Zones may permit accelerated testing with informed consent, temporary regulatory flexibility, anonymized outcome data, ONPA measurement, and full constitutional protection.",
+        "Impact classification and treatment",
+        "Class | Meaning | Treatment",
+        "T0 | Minimal societal risk | No intervention",
+        "T1 | Limited individual risk | Monitoring",
+        "T2 | Significant population exposure | Mandatory impact reporting",
+        "T3 | Potential developmental, psychological, economic, or physical harm | Controlled deployment and independent testing",
+        "T4 | Potential catastrophic or irreversible harm | National authorization required",
+        "Voluntary Technology Advancement Zones may permit accelerated testing with informed consent, temporary regulatory flexibility, anonymized outcome data, ONPA measurement, and full constitutional protection.",
         "Technology National Action Records",
         "Every major government technology program and significant technology regulation requires a ten-page Technology National Action Record addressing the problem, technology, societal benefit, economic effect, physical risk, psychological and developmental risk, rights implications, implementation, success and failure measures, and expiration. Major technology regulations expire within five years unless renewed on new evidence.",
         "Public Technology and Capture Prevention",
         "Technology developed entirely with public resources presumptively belongs to the public, subject to narrow national-security, privacy, safety, or strategic restrictions. Agency officials may not hold substantial regulated-company interests, accept gifts or industryfunded travel, or accept employment commitments. Senior officials face a five-year restriction on employment by organizations they directly regulated. Substantive meetings are public records."
       ],
-      "detailCount": 17
+      "detailCount": 23
     },
     {
       "number": "XV",
@@ -1825,11 +1867,10 @@
         "Universal Coverage and Producer Responsibility",
         "Material Circulation Authorization",
         "National Material Bucket System",
-        "Bucket Category",
-        "M00 Direct reuse and standardized components",
-        "M10 Metals",
-        "M20 Glass and ceramics",
-        "M30 Polymers"
+        "Product Passports and Design for Recovery",
+        "Universal Return and Material Hierarchy",
+        "Landfill Prohibition",
+        "Unresolved Material Repositories"
       ],
       "excerpt": [
         "National Principle",
@@ -1912,52 +1953,58 @@
           "text": "National Material Bucket System"
         },
         {
-          "type": "heading",
-          "text": "Bucket Category"
-        },
-        {
-          "type": "paragraph",
-          "text": "M00 Direct reuse and standardized components"
-        },
-        {
-          "type": "heading",
-          "text": "M10 Metals"
-        },
-        {
-          "type": "heading",
-          "text": "M20 Glass and ceramics"
-        },
-        {
-          "type": "heading",
-          "text": "M30 Polymers"
-        },
-        {
-          "type": "heading",
-          "text": "M40 Biological materials"
-        },
-        {
-          "type": "heading",
-          "text": "M50 Electronics"
-        },
-        {
-          "type": "paragraph",
-          "text": "M60 Batteries and energy storage"
-        },
-        {
-          "type": "heading",
-          "text": "M70 Textiles"
-        },
-        {
-          "type": "heading",
-          "text": "M80 Construction materials"
-        },
-        {
-          "type": "paragraph",
-          "text": "M90 Hazardous and controlled materials"
-        },
-        {
-          "type": "heading",
-          "text": "M99 Unresolved materials"
+          "type": "table",
+          "caption": "National material buckets",
+          "headers": [
+            "Bucket",
+            "Category"
+          ],
+          "rows": [
+            [
+              "M00",
+              "Direct reuse and standardized components"
+            ],
+            [
+              "M10",
+              "Metals"
+            ],
+            [
+              "M20",
+              "Glass and ceramics"
+            ],
+            [
+              "M30",
+              "Polymers"
+            ],
+            [
+              "M40",
+              "Biological materials"
+            ],
+            [
+              "M50",
+              "Electronics"
+            ],
+            [
+              "M60",
+              "Batteries and energy storage"
+            ],
+            [
+              "M70",
+              "Textiles"
+            ],
+            [
+              "M80",
+              "Construction materials"
+            ],
+            [
+              "M90",
+              "Hazardous and controlled materials"
+            ],
+            [
+              "M99",
+              "Unresolved materials"
+            ]
+          ]
         },
         {
           "type": "paragraph",
@@ -2015,18 +2062,19 @@
         "69. Residual material and current recovery limitations",
         "70. Financing of collection and processing",
         "National Material Bucket System",
-        "Bucket Category",
-        "M00 Direct reuse and standardized components",
-        "M10 Metals",
-        "M20 Glass and ceramics",
-        "M30 Polymers",
-        "M40 Biological materials",
-        "M50 Electronics",
-        "M60 Batteries and energy storage",
-        "M70 Textiles",
-        "M80 Construction materials",
-        "M90 Hazardous and controlled materials",
-        "M99 Unresolved materials",
+        "National material buckets",
+        "Bucket | Category",
+        "M00 | Direct reuse and standardized components",
+        "M10 | Metals",
+        "M20 | Glass and ceramics",
+        "M30 | Polymers",
+        "M40 | Biological materials",
+        "M50 | Electronics",
+        "M60 | Batteries and energy storage",
+        "M70 | Textiles",
+        "M80 | Construction materials",
+        "M90 | Hazardous and controlled materials",
+        "M99 | Unresolved materials",
         "Equivalent materials used by different companies shall use common national categories. Collection infrastructure is organized around material compatibility rather than brand identity. Proprietary collection categories are prohibited where a national bucket reasonably applies.",
         "Product Passports and Design for Recovery",
         "Every material product shall possess a durable physical or machine-readable identity providing composition, repair, disassembly, hazards, bucket assignment, collection locations, and recovery pathways. Products shall avoid unnecessary permanent adhesives, inseparable mixtures, proprietary fasteners, destructive disassembly, unmarked materials, nonreplaceable consumables, and software restrictions preventing reuse.",
@@ -2037,7 +2085,7 @@
         "Unresolved Material Repositories",
         "Materials for which no safe and technically feasible recovery, destruction, conversion, or reuse exists may enter engineered repositories. Such materials remain inventoried, separated, accessible, monitored, periodically reviewed, and assigned to responsible owners or public custodians. These repositories are not landfills and do not extinguish producer obligations."
       ],
-      "detailCount": 39
+      "detailCount": 40
     },
     {
       "number": "XVI",
@@ -3068,25 +3116,38 @@
       "title": "Housing Access, Limited Ownership, Nonprofit Transfer, and Income-Based Occupancy",
       "slug": "article-xxx",
       "order": 30,
-      "summary": "Housing shall serve first as a place of residence and human stability rather than an unrestricted vehicle for speculation. This Article establishes limits on residential accumulation, a guaranteed path to first ownership, controlled transfer values, nonprofit rental operation, mandatory income-based affordability, and conversion of unused commercial property when lowest-tier housing demand is unmet. Section 1 \u2014 Residential Ownership Limits",
+      "summary": "Housing shall serve first as a place of residence and human stability rather than an unrestricted vehicle for speculation. This Article establishes limits on residential accumulation, a guaranteed path to first ownership, controlled transfer values, nonprofit rental operation, mandatory income-based affordability, and conversion of unused commercial property when lowest-tier housing demand is unmet.",
       "sections": [
-        "Section 1 \u2014 Residential Ownership Limits",
-        "Certified individual annual income Maximum residential properties",
-        "Below $500,000 One",
-        "$500,000 through $1,000,000 Two",
-        "Above $1,000,000 Three",
-        "Section 2 \u2014 Primary Residence",
-        "Section 3 \u2014 Prohibition of Corporate Accumulation",
-        "Section 4 \u2014 First-Time Homebuyer Ownership Program",
-        "Section 5 \u2014 Twenty-Two-Year Conversion to Ownership",
-        "Section 6 \u2014 Annual Income Adjustment"
+        "Section 1 - Residential Ownership Limits",
+        "Section 2 - Primary Residence",
+        "Section 3 - Prohibition of Corporate Accumulation",
+        "Section 4 - First-Time Homebuyer Ownership Program",
+        "Section 5 - Twenty-Two-Year Conversion to Ownership",
+        "Section 6 - Annual Income Adjustment",
+        "Section 7 - Reasonable House Pricing Initiative",
+        "Section 8 - Tiered Housing Values",
+        "Section 9 - Prohibition of Residential Resale Profit",
+        "Section 10 - Housing Tier Advancement Credit",
+        "Section 11 - National Residential Exchange",
+        "Section 12 - Nonprofit Rental Standard",
+        "Section 13 - Lawful Rent and Small-Unit Ceiling",
+        "Section 14 - Universal Income-Based Rent",
+        "Section 15 - One Rental Residence",
+        "Section 16 - Eviction and Foreclosure Protection",
+        "Section 17 - Municipal Minimum Supply Duty",
+        "Section 18 - Commercial Vacancy Conversion Trigger",
+        "Section 19 - Standardized Substantial Living Areas",
+        "Section 20 - Conversion Priority and Designs",
+        "Section 21 - Owner Opportunity and Compulsory Acquisition",
+        "Section 22 - Mixed-Use Preservation",
+        "Section 23 - Housing Data and Review"
       ],
       "excerpt": [
         "Housing shall serve first as a place of residence and human stability rather than an unrestricted vehicle for speculation. This Article establishes limits on residential accumulation, a guaranteed path to first ownership, controlled transfer values, nonprofit rental operation, mandatory income-based affordability, and conversion of unused commercial property when lowest-tier housing demand is unmet.",
         "Section 1 \u2014 Residential Ownership Limits",
-        "Certified individual annual income Maximum residential properties",
-        "Below $500,000 One $500,000 through $1,000,000 Two",
-        "Above $1,000,000 Three"
+        "Residential ownership limits are stated by certified individual annual income and maximum residential properties.",
+        "Section 8 \u2014 Tiered Housing Values",
+        "Housing tiers are stated by tier number and habitable area."
       ],
       "textBlocks": [
         {
@@ -3098,20 +3159,26 @@
           "text": "Section 1 - Residential Ownership Limits"
         },
         {
-          "type": "paragraph",
-          "text": "Certified individual annual income Maximum residential properties"
-        },
-        {
-          "type": "heading",
-          "text": "Below $500,000 One"
-        },
-        {
-          "type": "paragraph",
-          "text": "$500,000 through $1,000,000 Two"
-        },
-        {
-          "type": "heading",
-          "text": "Above $1,000,000 Three"
+          "type": "table",
+          "caption": "Residential ownership limits",
+          "headers": [
+            "Certified individual annual income",
+            "Maximum residential properties"
+          ],
+          "rows": [
+            [
+              "Below $500,000",
+              "One"
+            ],
+            [
+              "$500,000 through $1,000,000",
+              "Two"
+            ],
+            [
+              "Above $1,000,000",
+              "Three"
+            ]
+          ]
         },
         {
           "type": "paragraph",
@@ -3170,12 +3237,42 @@
           "text": "Section 8 - Tiered Housing Values"
         },
         {
-          "type": "heading",
-          "text": "Tier Habitable area"
+          "type": "table",
+          "caption": "Tiered housing values",
+          "headers": [
+            "Tier",
+            "Habitable area"
+          ],
+          "rows": [
+            [
+              "I",
+              "Up to 600 sq. ft."
+            ],
+            [
+              "II",
+              "601-1,200 sq. ft."
+            ],
+            [
+              "III",
+              "1,201-1,800 sq. ft."
+            ],
+            [
+              "IV",
+              "1,801-2,500 sq. ft."
+            ],
+            [
+              "V",
+              "2,501-3,500 sq. ft."
+            ],
+            [
+              "VI",
+              "More than 3,500 sq. ft."
+            ]
+          ]
         },
         {
           "type": "paragraph",
-          "text": "I Up to 600 sq. ft. II 601-1,200 sq. ft. III 1,201-1,800 sq. ft. IV 1,801-2,500 sq. ft. V 2,501-3,500 sq. ft. VI More than 3,500 sq. ft. Each tier shall have a base construction value, maximum lawful price per square foot, regional cost adjustment, condition and age adjustment, improvement allowance, depreciation schedule, accessibility credit, and energy-efficiency credit. The marginal lawful price per additional square foot may decline in higher tiers."
+          "text": "Each tier shall have a base construction value, maximum lawful price per square foot, regional cost adjustment, condition and age adjustment, improvement allowance, depreciation schedule, accessibility credit, and energy-efficiency credit. The marginal lawful price per additional square foot may decline in higher tiers."
         },
         {
           "type": "heading",
@@ -3301,10 +3398,11 @@
       "fullText": [
         "Housing shall serve first as a place of residence and human stability rather than an unrestricted vehicle for speculation. This Article establishes limits on residential accumulation, a guaranteed path to first ownership, controlled transfer values, nonprofit rental operation, mandatory income-based affordability, and conversion of unused commercial property when lowest-tier housing demand is unmet.",
         "Section 1 - Residential Ownership Limits",
-        "Certified individual annual income Maximum residential properties",
-        "Below $500,000 One",
-        "$500,000 through $1,000,000 Two",
-        "Above $1,000,000 Three",
+        "Residential ownership limits",
+        "Certified individual annual income | Maximum residential properties",
+        "Below $500,000 | One",
+        "$500,000 through $1,000,000 | Two",
+        "Above $1,000,000 | Three",
         "Ownership includes direct, beneficial, trust, corporate, partnership, nominee, or controlling fractional interests. No household may use multiple nominal owners to evade the limits. Temporary exceptions may be granted for inheritance, divorce, replacement construction, relocation, casualty, or estate administration, ordinarily for no more than twenty-four months.",
         "Section 2 - Primary Residence",
         "Every adult may designate only one Primary Residence, which must be actually occupied for most of the year except during temporary absence for medical care, education, military service, work assignment, caregiving, disaster, or comparable necessity.",
@@ -3319,8 +3417,15 @@
         "Section 7 - Reasonable House Pricing Initiative",
         "Every residence shall receive a Maximum Lawful Transfer Price determined primarily by habitable square footage, structural type, quality, age, condition, energy efficiency, accessibility, documented permanent improvements, regional construction cost, ordinary residential land, and public infrastructure. Market bidding, prestige, scarcity, anticipated appreciation, and expected resale profit shall not independently increase the price.",
         "Section 8 - Tiered Housing Values",
-        "Tier Habitable area",
-        "I Up to 600 sq. ft. II 601-1,200 sq. ft. III 1,201-1,800 sq. ft. IV 1,801-2,500 sq. ft. V 2,501-3,500 sq. ft. VI More than 3,500 sq. ft. Each tier shall have a base construction value, maximum lawful price per square foot, regional cost adjustment, condition and age adjustment, improvement allowance, depreciation schedule, accessibility credit, and energy-efficiency credit. The marginal lawful price per additional square foot may decline in higher tiers.",
+        "Tiered housing values",
+        "Tier | Habitable area",
+        "I | Up to 600 sq. ft.",
+        "II | 601-1,200 sq. ft.",
+        "III | 1,201-1,800 sq. ft.",
+        "IV | 1,801-2,500 sq. ft.",
+        "V | 2,501-3,500 sq. ft.",
+        "VI | More than 3,500 sq. ft.",
+        "Each tier shall have a base construction value, maximum lawful price per square foot, regional cost adjustment, condition and age adjustment, improvement allowance, depreciation schedule, accessibility credit, and energy-efficiency credit. The marginal lawful price per additional square foot may decline in higher tiers.",
         "Section 9 - Prohibition of Residential Resale Profit",
         "A residence may not be sold for financial profit. The maximum resale amount equals the lawful acquisition price plus depreciated approved permanent improvements and unavoidable public assessments, less damage, deterioration, removed improvements, and depreciation, and may never exceed the current lawful transfer price. Interest, taxes, utilities, furnishings, ordinary maintenance, personal labor, and neighborhood demand do not create resale value.",
         "Section 10 - Housing Tier Advancement Credit",
@@ -3352,7 +3457,7 @@
         "Section 23 - Housing Data and Review",
         "A privacy-protected national database shall track inventory, occupancy, beneficial ownership, rental status, price, tier, condition, vacancy, construction, waiting lists, and transfer history. ONPA shall measure affordability, supply, quality, transfer time, homelessness, ownership concentration, commercial conversion, public cost, and unintended effects."
       ],
-      "detailCount": 52
+      "detailCount": 60
     },
     {
       "number": "XXXI",

@@ -145,6 +145,23 @@ const renderTextBlocks = (blocks = [], className = "full-text") => `
       if (block.type === "heading") {
         return `<h3>${escapeHtml(block.text)}</h3>`;
       }
+      if (block.type === "table") {
+        return `
+          <div class="data-table-wrap">
+            <table class="data-table">
+              ${block.caption ? `<caption>${escapeHtml(block.caption)}</caption>` : ""}
+              <thead>
+                <tr>${block.headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr>
+              </thead>
+              <tbody>
+                ${block.rows.map((row) => `
+                  <tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>
+                `).join("")}
+              </tbody>
+            </table>
+          </div>
+        `;
+      }
       return `<p>${escapeHtml(block.text)}</p>`;
     }).join("")}
   </div>
