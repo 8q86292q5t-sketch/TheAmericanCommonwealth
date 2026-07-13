@@ -8,6 +8,7 @@ const structuralArticleRomans = new Set(["III", "IV", "V", "VII", "XXI"]);
 const articlesInOrder = [...data.articles].sort((a, b) => a.order - b.order);
 const structuralArticles = articlesInOrder.filter((article) => structuralArticleRomans.has(article.roman));
 const articleDirectory = articlesInOrder.filter((article) => !structuralArticleRomans.has(article.roman));
+const articleByRoman = new Map(articlesInOrder.map((article) => [article.roman, article]));
 const duplicatedInstitutionNames = new Set([
   "Five-Cohort Executive Council",
   "Assembly of State Delegations",
@@ -131,6 +132,24 @@ const cardGrid = (items, pathFor, metaFor) => `
   </div>
 `;
 
+const sourceHrefForRoman = (roman) => {
+  const source = articleByRoman.get(roman);
+  if (!source) return "/";
+  if (structuralArticleRomans.has(roman)) return `/government/${source.slug}.html`;
+  return `/articles/${source.slug}.html`;
+};
+
+const renderTextBlocks = (blocks = [], className = "full-text") => `
+  <div class="${className}">
+    ${blocks.map((block) => {
+      if (block.type === "heading") {
+        return `<h3>${escapeHtml(block.text)}</h3>`;
+      }
+      return `<p>${escapeHtml(block.text)}</p>`;
+    }).join("")}
+  </div>
+`;
+
 const homepage = () => layout({
   title: "Official Portal",
   description: data.site.description,
@@ -221,8 +240,8 @@ const articlePage = (article) => layout({
         <strong>${escapeHtml(article.number)}</strong>
       </aside>
       <article class="document-card">
-        <h2>Operative overview</h2>
-        ${article.excerpt.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
+        <h2>Complete constitutional text</h2>
+        ${renderTextBlocks(article.textBlocks, "full-text article-text")}
         ${article.sections.length ? `
           <h2>Selected sections</h2>
           <ul class="section-list">
@@ -238,7 +257,10 @@ const agencyPage = (agency) => layout({
   title: agency.name,
   description: agency.description,
   pageClass: "document-page",
-  body: `
+  body: (() => {
+    const sourceArticle = articleByRoman.get(agency.article);
+    const sourceHref = sourceHrefForRoman(agency.article);
+    return `
     <section class="page-hero compact">
       <p class="breadcrumb"><a href="/">Home</a> / Agencies / ${escapeHtml(agency.name)}</p>
       <p class="eyebrow">Agency directory</p>
@@ -250,7 +272,7 @@ const agencyPage = (agency) => layout({
         <h2>Definition</h2>
         <p>The ${escapeHtml(agency.name)} is a constitutionally identified public body of the Generational Commonwealth. Its defined public purpose is: ${escapeHtml(agency.description)}</p>
         <h2>Constitutional source</h2>
-        <p>This agency is associated with Article ${escapeHtml(agency.article)}: <a href="/articles/${escapeHtml(agency.sourceSlug)}.html">${escapeHtml(agency.articleTitle)}</a>.</p>
+        <p>This agency is associated with Article ${escapeHtml(agency.article)}: <a href="${sourceHref}">${escapeHtml(agency.articleTitle)}</a>.</p>
         <h2>Core public functions</h2>
         <ul class="duty-list">
           <li>Administer the public mandate assigned to it by the constitution and any lawful implementing legislation.</li>
@@ -260,19 +282,26 @@ const agencyPage = (agency) => layout({
         </ul>
         <h2>Public interface</h2>
         <p>This page is structured as the agency's official public definition. It can later receive leadership information, service portals, forms, notices, reports, dashboards, and public records without changing the site architecture.</p>
+        ${sourceArticle?.textBlocks?.length ? `
+          <h2>Mirrored constitutional article</h2>
+          <p class="mirror-note">The full establishing article is reproduced below so this agency page can stand on its own without requiring a separate article-page jump.</p>
+          <div class="scroll-window" tabindex="0" aria-label="Mirrored text of Article ${escapeHtml(agency.article)}">
+            ${renderTextBlocks(sourceArticle.textBlocks, "full-text mirror-text")}
+          </div>
+        ` : ""}
       </article>
       <aside class="seal-panel">
         <span class="large-mark">GC</span>
         <p>Public authority must be lawful, measurable, reviewable, and subject to meaningful appeal.</p>
       </aside>
     </section>
-  `,
+  `;
+  })(),
 });
 
 const governmentPage = (item) => {
-  const sourceHref = structuralArticleRomans.has(item.articleNumber)
-    ? `/government/${item.sourceSlug}.html`
-    : `/government/${item.sourceSlug}.html`;
+  const sourceArticle = articleByRoman.get(item.articleNumber);
+  const sourceHref = sourceHrefForRoman(item.articleNumber);
   const sourceLabel = item.articleTitle || item.title || item.name;
   const roleLabel = item.type === "structure" ? "High governmental structure" : "Constitutional institution";
 
@@ -292,9 +321,12 @@ const governmentPage = (item) => {
         <h2>Constitutional placement</h2>
         <p>This government structure is grounded in Article ${escapeHtml(item.articleNumber)}: <a href="${sourceHref}">${escapeHtml(sourceLabel)}</a>.</p>
         <p>It is excluded from the Articles dropdown and article count because it establishes the governmental architecture itself rather than an ordinary policy or rights article.</p>
-        ${item.type === "structure" && item.excerpt?.length ? `
-          <h2>Operative overview</h2>
-          ${item.excerpt.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
+        ${sourceArticle?.textBlocks?.length ? `
+          <h2>Mirrored constitutional article</h2>
+          <p class="mirror-note">The full source article is reproduced below for direct review inside this government page.</p>
+          <div class="scroll-window" tabindex="0" aria-label="Mirrored text of Article ${escapeHtml(item.articleNumber)}">
+            ${renderTextBlocks(sourceArticle.textBlocks, "full-text mirror-text")}
+          </div>
         ` : ""}
       </article>
       <aside class="seal-panel">
@@ -334,7 +366,7 @@ const identityPage = () => layout({
       </article>
       <article class="document-card identity-panel text-panel">
         <h2>Constitutional text basis</h2>
-        ${data.identity.excerpt.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
+        ${renderTextBlocks(data.identity.textBlocks || data.identity.excerpt.map((text) => ({ type: "paragraph", text })), "full-text article-text")}
       </article>
     </section>
   `,

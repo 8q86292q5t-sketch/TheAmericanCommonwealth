@@ -24,6 +24,8 @@ npm run build
 - `dist/government/` contains high governmental structures and constitutional courts.
 - `dist/identity.html` replaces Article XXXVII as a dedicated identity page.
 - `dist/agencies/` contains unique defined agency pages.
+- Article pages render complete extracted constitutional text.
+- Agency and government pages mirror their establishing article text in contained scrollable panels.
 
 ## Current Navigation
 
