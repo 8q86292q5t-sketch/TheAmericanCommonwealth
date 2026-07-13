@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The American Commonwealth is a draft civic publication and project hub."
+    />
+    <title>The American Commonwealth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="The American Commonwealth home">
+        <span class="brand-mark" aria-hidden="true">AC</span>
+        <span>The American Commonwealth</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#brief">Brief</a>
+        <a href="#sections">Sections</a>
+        <a href="#ledger">Ledger</a>
+        <a href="#next">Next</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <picture>
+          <img
+            src="/assets/commonwealth-archive-hero.png"
+            alt="A warmly lit archive table with documents, a desk lamp, a map, and books."
+          />
+        </picture>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Civic design, public memory, and democratic repair</p>
+          <h1 id="hero-title">The American Commonwealth</h1>
+          <p class="lede">
+            A working draft for a public-facing site about institutions, local
+            power, political culture, and practical reforms.
+          </p>
+          <div class="hero-actions" aria-label="Page actions">
+            <a class="button primary" href="#brief">Open draft</a>
+            <a class="button secondary" href="#next">Shape the next prompt</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="brief" id="brief" aria-labelledby="brief-title">
+        <div class="section-kicker">Draft spine</div>
+        <div class="brief-grid">
+          <div>
+            <h2 id="brief-title">A serious civic publication with room to become a platform.</h2>
+          </div>
+          <div class="brief-copy">
+            <p>
+              This first draft frames the site as a thoughtful publication and
+              project hub. It can move toward essays, research notes, policy
+              explainers, local chapter tooling, a newsletter, or a members area
+              without changing the visual direction.
+            </p>
+            <p>
+              The tone is institutional without feeling frozen: archival,
+              editorial, and practical.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sections" id="sections" aria-labelledby="sections-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">Editorial lanes</div>
+            <h2 id="sections-title">Start with four durable content tracks.</h2>
+          </div>
+          <p>
+            Each lane is intentionally broad so future prompts can turn it into
+            pages, feeds, databases, or interactive tools.
+          </p>
+        </div>
+
+        <div class="lane-grid">
+          <article class="lane">
+            <span class="lane-number">01</span>
+            <h3>Institutions</h3>
+            <p>Congress, courts, parties, states, cities, and the operating rules behind them.</p>
+          </article>
+          <article class="lane">
+            <span class="lane-number">02</span>
+            <h3>Political Culture</h3>
+            <p>Language, symbols, habits, media, and the norms that shape civic life.</p>
+          </article>
+          <article class="lane">
+            <span class="lane-number">03</span>
+            <h3>Local Power</h3>
+            <p>Municipal systems, school boards, zoning, budgets, public meetings, and local capacity.</p>
+          </article>
+          <article class="lane">
+            <span class="lane-number">04</span>
+            <h3>Reform Workshop</h3>
+            <p>Plain-language proposals, implementation notes, tradeoffs, and scorecards.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="ledger" id="ledger" aria-labelledby="ledger-title">
+        <div class="section-kicker">Prototype ledger</div>
+        <h2 id="ledger-title">A first content queue for the next build pass.</h2>
+        <div class="ledger-table" role="table" aria-label="Draft content queue">
+          <div class="ledger-row ledger-head" role="row">
+            <span role="columnheader">Item</span>
+            <span role="columnheader">Track</span>
+            <span role="columnheader">State</span>
+          </div>
+          <div class="ledger-row" role="row">
+            <span role="cell">Federalism without nostalgia</span>
+            <span role="cell">Institutions</span>
+            <span role="cell">Outline</span>
+          </div>
+          <div class="ledger-row" role="row">
+            <span role="cell">The meeting as a civic interface</span>
+            <span role="cell">Local Power</span>
+            <span role="cell">Sketch</span>
+          </div>
+          <div class="ledger-row" role="row">
+            <span role="cell">A scorecard for practical reform</span>
+            <span role="cell">Workshop</span>
+            <span role="cell">Model</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="next" id="next" aria-labelledby="next-title">
+        <div>
+          <div class="section-kicker">Next prompt targets</div>
+          <h2 id="next-title">The site is ready for sharper direction.</h2>
+        </div>
+        <div class="prompt-list">
+          <button type="button" data-copy="Turn this into a publication homepage with article cards, issue tags, and a newsletter signup.">
+            Publication homepage
+          </button>
+          <button type="button" data-copy="Add a policy reform database with filters for level of government, difficulty, and impact.">
+            Reform database
+          </button>
+          <button type="button" data-copy="Create a local civic dashboard page for meetings, budgets, elected offices, and action items.">
+            Local dashboard
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>The American Commonwealth</span>
+      <span>Draft 0.1</span>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

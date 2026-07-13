@@ -1,0 +1,13 @@
+{
+  "name": "the-american-commonwealth",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Draft site for The American Commonwealth.",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "node scripts/build-site.js"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
