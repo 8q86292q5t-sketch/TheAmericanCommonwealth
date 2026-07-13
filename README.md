@@ -20,13 +20,14 @@ npm run build
 - `content/site-data.json` drives the generated pages.
 - `scripts/build-site.js` generates `dist/`.
 - `assets/generational-commonwealth-flag.png` is the official flag image.
-- `dist/articles/` contains the Preliminary Declaration and Articles I-XXXVI.
+- `dist/articles/` contains the Preliminary Declaration and non-structural Articles I-XXXVI.
+- `dist/government/` contains high governmental structures and constitutional courts.
 - `dist/identity.html` replaces Article XXXVII as a dedicated identity page.
-- `dist/agencies/` and `dist/institutions/` contain unique directory pages.
+- `dist/agencies/` contains unique defined agency pages.
 
 ## Current Navigation
 
-- Institutions: constitutional organs of government, excluding agencies.
+- Government: high constitutional structures and courts, excluding agencies.
 - Agencies: authorities, offices, services, programs, registries, and networks.
-- Articles: all constitutional articles except Article XXXVII.
+- Articles: non-structural constitutional articles except Article XXXVII.
 - Identity: flag and national animal material from Article XXXVII.

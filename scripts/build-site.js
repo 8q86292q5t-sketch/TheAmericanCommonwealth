@@ -4,6 +4,33 @@ const { join } = require("node:path");
 const root = process.cwd();
 const dist = join(root, "dist");
 const data = JSON.parse(readFileSync(join(root, "content/site-data.json"), "utf8"));
+const structuralArticleRomans = new Set(["III", "IV", "V", "VII", "XXI"]);
+const articlesInOrder = [...data.articles].sort((a, b) => a.order - b.order);
+const structuralArticles = articlesInOrder.filter((article) => structuralArticleRomans.has(article.roman));
+const articleDirectory = articlesInOrder.filter((article) => !structuralArticleRomans.has(article.roman));
+const duplicatedInstitutionNames = new Set([
+  "Five-Cohort Executive Council",
+  "Assembly of State Delegations",
+  "Judiciary and Constitutional Balance",
+  "States and Municipalities",
+]);
+const governmentItems = [
+  ...structuralArticles.map((article) => ({
+    ...article,
+    type: "structure",
+    name: article.title,
+    description: article.summary,
+    articleNumber: article.number,
+    sourceSlug: article.slug,
+  })),
+  ...data.institutions
+    .filter((institution) => !duplicatedInstitutionNames.has(institution.name))
+    .map((institution) => ({
+      ...institution,
+      type: "institution",
+      articleNumber: institution.article,
+    })),
+];
 
 const required = [
   "content/site-data.json",
@@ -24,7 +51,7 @@ rmSync(dist, { force: true, recursive: true });
 mkdirSync(join(dist, "assets"), { recursive: true });
 mkdirSync(join(dist, "articles"), { recursive: true });
 mkdirSync(join(dist, "agencies"), { recursive: true });
-mkdirSync(join(dist, "institutions"), { recursive: true });
+mkdirSync(join(dist, "government"), { recursive: true });
 
 cpSync(join(root, "styles.css"), join(dist, "styles.css"));
 cpSync(join(root, "script.js"), join(dist, "script.js"));
@@ -42,7 +69,7 @@ const pagePath = {
   identity: "/identity.html",
   article: (item) => `/articles/${item.slug}.html`,
   agency: (item) => `/agencies/${item.slug}.html`,
-  institution: (item) => `/institutions/${item.slug}.html`,
+  government: (item) => `/government/${item.slug}.html`,
 };
 
 const dropdown = (label, items, pathFor, formatter) => `
@@ -64,9 +91,9 @@ const header = () => `
       </span>
     </a>
     <nav class="primary-nav" aria-label="Primary navigation">
-      ${dropdown("Institutions", data.institutions, pagePath.institution, (item) => escapeHtml(item.name))}
+      ${dropdown("Government", governmentItems, pagePath.government, (item) => escapeHtml(item.name))}
       ${dropdown("Agencies", data.agencies, pagePath.agency, (item) => escapeHtml(item.name))}
-      ${dropdown("Articles", data.articles, pagePath.article, (item) => `${escapeHtml(item.number)}. ${escapeHtml(item.title)}`)}
+      ${dropdown("Articles", articleDirectory, pagePath.article, (item) => `${escapeHtml(item.number)}. ${escapeHtml(item.title)}`)}
       <a class="identity-link" href="${pagePath.identity}">Identity</a>
     </nav>
   </header>
@@ -130,18 +157,18 @@ const homepage = () => layout({
         <p class="section-kicker">Constitutional structure</p>
         <h2>Distributed authority, measurable administration, and generational representation.</h2>
       </div>
-      <p>The portal organizes the constitution into three public directories: institutions of government, agencies and public authorities, and constitutional articles. Article XXXVII is presented as a separate Identity page for the flag and national animal.</p>
+      <p>The portal separates high governmental structure from ordinary article reading order. Government contains the cohort system, executive council, state delegations, judiciary, state and municipal structure, and major courts. Agencies contains definable public bodies. Articles contains the remaining non-structural constitutional provisions in numeric order.</p>
     </section>
 
     <section class="content-section">
       <div class="section-heading">
         <div>
-          <p class="section-kicker">Institutions</p>
-          <h2>Constitutional organs of government</h2>
+          <p class="section-kicker">Government</p>
+          <h2>High constitutional structures and courts</h2>
         </div>
-        <a href="/institutions/five-cohort-executive-council.html">First institution</a>
+        <a href="/government/article-iv.html">Executive council</a>
       </div>
-      ${cardGrid(data.institutions.slice(0, 6), pagePath.institution, (item) => `Article ${item.article}`)}
+      ${cardGrid(governmentItems.slice(0, 6), pagePath.government, (item) => `Article ${item.articleNumber}`)}
     </section>
 
     <section class="content-section shaded">
@@ -150,7 +177,7 @@ const homepage = () => layout({
           <p class="section-kicker">Agencies</p>
           <h2>Authorities, offices, services, and programs</h2>
         </div>
-        <a href="/agencies/office-of-national-performance-and-accountability.html">First agency</a>
+        <a href="/agencies/office-of-national-performance-and-accountability.html">Agency directory</a>
       </div>
       ${cardGrid(data.agencies.slice(0, 6), pagePath.agency, (item) => `Article ${item.article}`)}
     </section>
@@ -159,12 +186,12 @@ const homepage = () => layout({
       <div class="section-heading">
         <div>
           <p class="section-kicker">Articles</p>
-          <h2>Constitutional article directory</h2>
+          <h2>Non-structural article directory</h2>
         </div>
-        <a href="/identity.html">Article XXXVII identity material</a>
+        <a href="/identity.html">Identity replaces Article XXXVII</a>
       </div>
       <ol class="article-list">
-        ${data.articles.map((item) => `
+        ${articleDirectory.map((item) => `
           <li>
             <a href="${pagePath.article(item)}">
               <span>${escapeHtml(item.number)}</span>
@@ -219,10 +246,20 @@ const agencyPage = (agency) => layout({
       <p class="lede">${escapeHtml(agency.description)}</p>
     </section>
     <section class="detail-grid">
-      <article class="document-card">
+      <article class="document-card agency-definition">
+        <h2>Definition</h2>
+        <p>The ${escapeHtml(agency.name)} is a constitutionally identified public body of the Generational Commonwealth. Its defined public purpose is: ${escapeHtml(agency.description)}</p>
         <h2>Constitutional source</h2>
-        <p>This office, authority, program, or public body is associated with Article ${escapeHtml(agency.article)}: <a href="/articles/${escapeHtml(agency.sourceSlug)}.html">${escapeHtml(agency.articleTitle)}</a>.</p>
-        <p>The agency page is intentionally concise so future prompts can add leadership, statutory duties, forms, notices, public records, or service dashboards.</p>
+        <p>This agency is associated with Article ${escapeHtml(agency.article)}: <a href="/articles/${escapeHtml(agency.sourceSlug)}.html">${escapeHtml(agency.articleTitle)}</a>.</p>
+        <h2>Core public functions</h2>
+        <ul class="duty-list">
+          <li>Administer the public mandate assigned to it by the constitution and any lawful implementing legislation.</li>
+          <li>Publish clear public records, standards, determinations, and review materials for its assigned domain.</li>
+          <li>Coordinate with ONPA for measurable performance, fiscal review, delivery review, and intergenerational impact review.</li>
+          <li>Maintain due process, privacy, appeal rights, and accessible public service procedures.</li>
+        </ul>
+        <h2>Public interface</h2>
+        <p>This page is structured as the agency's official public definition. It can later receive leadership information, service portals, forms, notices, reports, dashboards, and public records without changing the site architecture.</p>
       </article>
       <aside class="seal-panel">
         <span class="large-mark">GC</span>
@@ -232,22 +269,33 @@ const agencyPage = (agency) => layout({
   `,
 });
 
-const institutionPage = (institution) => layout({
-  title: institution.name,
-  description: institution.description,
+const governmentPage = (item) => {
+  const sourceHref = structuralArticleRomans.has(item.articleNumber)
+    ? `/government/${item.sourceSlug}.html`
+    : `/government/${item.sourceSlug}.html`;
+  const sourceLabel = item.articleTitle || item.title || item.name;
+  const roleLabel = item.type === "structure" ? "High governmental structure" : "Constitutional institution";
+
+  return layout({
+  title: item.name,
+  description: item.description,
   pageClass: "document-page",
   body: `
     <section class="page-hero compact">
-      <p class="breadcrumb"><a href="/">Home</a> / Institutions / ${escapeHtml(institution.name)}</p>
-      <p class="eyebrow">Constitutional institution</p>
-      <h1>${escapeHtml(institution.name)}</h1>
-      <p class="lede">${escapeHtml(institution.description)}</p>
+      <p class="breadcrumb"><a href="/">Home</a> / Government / ${escapeHtml(item.name)}</p>
+      <p class="eyebrow">${escapeHtml(roleLabel)}</p>
+      <h1>${escapeHtml(item.name)}</h1>
+      <p class="lede">${escapeHtml(item.description)}</p>
     </section>
     <section class="detail-grid">
       <article class="document-card">
         <h2>Constitutional placement</h2>
-        <p>This institution is grounded in Article ${escapeHtml(institution.article)}: <a href="/articles/${escapeHtml(institution.sourceSlug)}.html">${escapeHtml(institution.articleTitle)}</a>.</p>
-        <p>It is listed outside the agency directory because it is part of the constitutional structure of government rather than an ordinary administrative body.</p>
+        <p>This government structure is grounded in Article ${escapeHtml(item.articleNumber)}: <a href="${sourceHref}">${escapeHtml(sourceLabel)}</a>.</p>
+        <p>It is excluded from the Articles dropdown and article count because it establishes the governmental architecture itself rather than an ordinary policy or rights article.</p>
+        ${item.type === "structure" && item.excerpt?.length ? `
+          <h2>Operative overview</h2>
+          ${item.excerpt.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
+        ` : ""}
       </article>
       <aside class="seal-panel">
         <span class="large-mark">GC</span>
@@ -256,14 +304,15 @@ const institutionPage = (institution) => layout({
     </section>
   `,
 });
+};
 
 const identityPage = () => layout({
   title: "National Identity",
   description: data.identity.summary,
   pageClass: "identity-page",
   body: `
-    <section class="page-hero identity-hero">
-      <div>
+    <section class="page-hero identity-hero expanded-identity">
+      <div class="identity-copy">
         <p class="breadcrumb"><a href="/">Home</a> / Identity</p>
         <p class="eyebrow">${escapeHtml(data.identity.source)}</p>
         <h1>${escapeHtml(data.identity.title)}</h1>
@@ -271,16 +320,19 @@ const identityPage = () => layout({
       </div>
       <figure class="identity-flag">
         <img src="${data.site.flag}" alt="Flag of the Generational Commonwealth" />
+        <figcaption>Official flag of the Generational Commonwealth</figcaption>
       </figure>
     </section>
-    <section class="detail-grid">
-      <article class="document-card">
+    <section class="identity-sections">
+      <article class="document-card identity-panel flag-panel">
         <h2>Flag</h2>
         <p>${escapeHtml(data.identity.flagMeaning)}</p>
+      </article>
+      <article class="document-card identity-panel animal-panel">
         <h2>National animal</h2>
         <p>${escapeHtml(data.identity.animal)}</p>
       </article>
-      <article class="document-card">
+      <article class="document-card identity-panel text-panel">
         <h2>Constitutional text basis</h2>
         ${data.identity.excerpt.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
       </article>
@@ -291,7 +343,7 @@ const identityPage = () => layout({
 writeFileSync(join(dist, "index.html"), homepage());
 writeFileSync(join(dist, "identity.html"), identityPage());
 
-for (const article of data.articles) {
+for (const article of articleDirectory) {
   writeFileSync(join(dist, "articles", `${article.slug}.html`), articlePage(article));
 }
 
@@ -299,8 +351,8 @@ for (const agency of data.agencies) {
   writeFileSync(join(dist, "agencies", `${agency.slug}.html`), agencyPage(agency));
 }
 
-for (const institution of data.institutions) {
-  writeFileSync(join(dist, "institutions", `${institution.slug}.html`), institutionPage(institution));
+for (const item of governmentItems) {
+  writeFileSync(join(dist, "government", `${item.slug}.html`), governmentPage(item));
 }
 
-console.log(`Built ${data.articles.length} article pages, ${data.agencies.length} agency pages, ${data.institutions.length} institution pages, and identity page to dist.`);
+console.log(`Built ${articleDirectory.length} article pages, ${data.agencies.length} agency pages, ${governmentItems.length} government pages, and identity page to dist.`);
