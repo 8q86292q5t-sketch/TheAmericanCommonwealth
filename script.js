@@ -21,3 +21,35 @@ document.addEventListener("click", (event) => {
   if (event.target.closest(".nav-menu")) return;
   menus.forEach((menu) => menu.removeAttribute("open"));
 });
+
+const sectionLinks = [...document.querySelectorAll("[data-section-link]")];
+const sections = [...document.querySelectorAll("[data-document-section]")];
+
+const setActiveSection = (id) => {
+  sectionLinks.forEach((link) => {
+    const active = link.getAttribute("href") === `#${id}`;
+    link.classList.toggle("is-active", active);
+    if (active) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
+};
+
+if (sections.length) {
+  let sectionFrame = null;
+  const syncActiveSection = () => {
+    sectionFrame = null;
+    const active = sections.reduce((current, section) => (
+      section.getBoundingClientRect().top <= 160 ? section : current
+    ), sections[0]);
+    setActiveSection(active.id);
+  };
+
+  window.addEventListener("scroll", () => {
+    if (sectionFrame === null) sectionFrame = requestAnimationFrame(syncActiveSection);
+  }, { passive: true });
+  syncActiveSection();
+}
+
+sectionLinks.forEach((link) => {
+  link.addEventListener("click", () => setActiveSection(link.hash.slice(1)));
+});

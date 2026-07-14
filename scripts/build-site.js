@@ -7,7 +7,7 @@ const data = JSON.parse(readFileSync(join(root, "content/site-data.json"), "utf8
 const structuralArticleRomans = new Set(["III", "IV", "V", "VII", "XXI"]);
 const articlesInOrder = [...data.articles].sort((a, b) => a.order - b.order);
 const structuralArticles = articlesInOrder.filter((article) => structuralArticleRomans.has(article.roman));
-const articleDirectory = articlesInOrder.filter((article) => !structuralArticleRomans.has(article.roman));
+const articleDirectory = articlesInOrder;
 const articleByRoman = new Map(articlesInOrder.map((article) => [article.roman, article]));
 const duplicatedInstitutionNames = new Set([
   "Five-Cohort Executive Council",
@@ -68,7 +68,7 @@ const escapeHtml = (value = "") =>
 const pagePath = {
   home: "/",
   identity: "/identity.html",
-  article: (item) => `/articles/${item.slug}.html`,
+  article: (item) => item.roman === "XXXVII" ? "/identity.html" : `/articles/${item.slug}.html`,
   agency: (item) => `/agencies/${item.slug}.html`,
   government: (item) => `/government/${item.slug}.html`,
 };
@@ -135,15 +135,40 @@ const cardGrid = (items, pathFor, metaFor) => `
 const sourceHrefForRoman = (roman) => {
   const source = articleByRoman.get(roman);
   if (!source) return "/";
-  if (structuralArticleRomans.has(roman)) return `/government/${source.slug}.html`;
-  return `/articles/${source.slug}.html`;
+  return pagePath.article(source);
 };
 
-const renderTextBlocks = (blocks = [], className = "full-text") => `
+const slugify = (value = "") => String(value)
+  .toLowerCase()
+  .normalize("NFKD")
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-+|-+$/g, "") || "section";
+
+const sectionEntriesFor = (blocks = []) => {
+  let index = 0;
+  return blocks.flatMap((block) => {
+    if (block.type !== "heading") return [];
+    index += 1;
+    return [{ title: block.text, id: `section-${index}-${slugify(block.text)}` }];
+  });
+};
+
+const renderTextBlocks = (blocks = [], className = "full-text", { linkHeadings = false } = {}) => {
+  const sectionEntries = sectionEntriesFor(blocks);
+  let headingIndex = 0;
+  return `
   <div class="${className}">
     ${blocks.map((block) => {
       if (block.type === "heading") {
-        return `<h3>${escapeHtml(block.text)}</h3>`;
+        const section = sectionEntries[headingIndex++];
+        const attributes = linkHeadings ? ` id="${section.id}" data-document-section` : "";
+        return `<h3${attributes}>${escapeHtml(block.text)}</h3>`;
+      }
+      if (block.type === "ordered-list") {
+        return `<ol class="constitutional-list" start="${Number(block.start) || 1}">${block.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol>`;
+      }
+      if (block.type === "unordered-list") {
+        return `<ul class="constitutional-list">${block.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
       }
       if (block.type === "table") {
         return `
@@ -151,7 +176,7 @@ const renderTextBlocks = (blocks = [], className = "full-text") => `
             <table class="data-table">
               ${block.caption ? `<caption>${escapeHtml(block.caption)}</caption>` : ""}
               <thead>
-                <tr>${block.headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr>
+                <tr>${block.headers.map((header) => `<th scope="col">${escapeHtml(header)}</th>`).join("")}</tr>
               </thead>
               <tbody>
                 ${block.rows.map((row) => `
@@ -166,6 +191,7 @@ const renderTextBlocks = (blocks = [], className = "full-text") => `
     }).join("")}
   </div>
 `;
+};
 
 const homepage = () => layout({
   title: "Official Portal",
@@ -193,7 +219,7 @@ const homepage = () => layout({
         <p class="section-kicker">Constitutional structure</p>
         <h2>Distributed authority, measurable administration, and generational representation.</h2>
       </div>
-      <p>The portal separates high governmental structure from ordinary article reading order. Government contains the cohort system, executive council, state delegations, judiciary, state and municipal structure, and major courts. Agencies contains definable public bodies. Articles contains the remaining non-structural constitutional provisions in numeric order.</p>
+      <p>Government groups the cohort system, executive council, state delegations, judiciary, state and municipal structure, and major courts. Agencies contains definable public bodies. Articles preserves the complete constitutional sequence, including provisions also mirrored elsewhere in the portal.</p>
     </section>
 
     <section class="content-section">
@@ -222,9 +248,9 @@ const homepage = () => layout({
       <div class="section-heading">
         <div>
           <p class="section-kicker">Articles</p>
-          <h2>Non-structural article directory</h2>
+          <h2>Complete constitutional article directory</h2>
         </div>
-        <a href="/identity.html">Identity replaces Article XXXVII</a>
+        <a href="/identity.html">Article XXXVII: National Identity</a>
       </div>
       <ol class="article-list">
         ${articleDirectory.map((item) => `
@@ -240,7 +266,9 @@ const homepage = () => layout({
   `,
 });
 
-const articlePage = (article) => layout({
+const articlePage = (article) => {
+  const sectionEntries = sectionEntriesFor(article.textBlocks);
+  return layout({
   title: `${article.number}. ${article.title}`,
   description: article.summary,
   pageClass: "document-page",
@@ -252,23 +280,29 @@ const articlePage = (article) => layout({
       <p class="lede">${escapeHtml(article.summary)}</p>
     </section>
     <section class="document-layout">
-      <aside class="document-aside">
-        <span>Article</span>
-        <strong>${escapeHtml(article.number)}</strong>
-      </aside>
-      <article class="document-card">
+      <div class="document-sidebar">
+        <aside class="document-aside article-identity-block">
+          <span>Article</span>
+          <strong>${escapeHtml(article.number)}</strong>
+          <p>${escapeHtml(article.title)}</p>
+        </aside>
+        <nav class="section-nav" aria-label="Sections in ${escapeHtml(article.title)}">
+          <span>On this page</span>
+          <ol>
+            ${(sectionEntries.length ? sectionEntries : [{ title: "Complete constitutional text", id: "article-text" }]).map((section) => `
+              <li><a href="#${section.id}" data-section-link>${escapeHtml(section.title)}</a></li>
+            `).join("")}
+          </ol>
+        </nav>
+      </div>
+      <article class="document-card" id="article-text">
         <h2>Complete constitutional text</h2>
-        ${renderTextBlocks(article.textBlocks, "full-text article-text")}
-        ${article.sections.length ? `
-          <h2>Selected sections</h2>
-          <ul class="section-list">
-            ${article.sections.map((section) => `<li>${escapeHtml(section)}</li>`).join("")}
-          </ul>
-        ` : ""}
+        ${renderTextBlocks(article.textBlocks, "full-text article-text", { linkHeadings: true })}
       </article>
     </section>
   `,
 });
+};
 
 const agencyPage = (agency) => layout({
   title: agency.name,
@@ -337,7 +371,7 @@ const governmentPage = (item) => {
       <article class="document-card">
         <h2>Constitutional placement</h2>
         <p>This government structure is grounded in Article ${escapeHtml(item.articleNumber)}: <a href="${sourceHref}">${escapeHtml(sourceLabel)}</a>.</p>
-        <p>It is excluded from the Articles dropdown and article count because it establishes the governmental architecture itself rather than an ordinary policy or rights article.</p>
+        <p>The establishing provision also remains available in the complete Articles directory so the constitutional sequence is never interrupted.</p>
         ${sourceArticle?.textBlocks?.length ? `
           <h2>Mirrored constitutional article</h2>
           <p class="mirror-note">The full source article is reproduced below for direct review inside this government page.</p>
@@ -392,7 +426,7 @@ const identityPage = () => layout({
 writeFileSync(join(dist, "index.html"), homepage());
 writeFileSync(join(dist, "identity.html"), identityPage());
 
-for (const article of articleDirectory) {
+for (const article of articleDirectory.filter((item) => item.roman !== "XXXVII")) {
   writeFileSync(join(dist, "articles", `${article.slug}.html`), articlePage(article));
 }
 
@@ -404,4 +438,4 @@ for (const item of governmentItems) {
   writeFileSync(join(dist, "government", `${item.slug}.html`), governmentPage(item));
 }
 
-console.log(`Built ${articleDirectory.length} article pages, ${data.agencies.length} agency pages, ${governmentItems.length} government pages, and identity page to dist.`);
+console.log(`Built ${articleDirectory.length} article routes, ${data.agencies.length} agency pages, ${governmentItems.length} government pages, and identity page to dist.`);
