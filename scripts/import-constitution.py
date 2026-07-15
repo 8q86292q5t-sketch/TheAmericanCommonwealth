@@ -1,464 +1,336 @@
 #!/usr/bin/env python3
-"""Import structured constitutional text from the source PDFs into site-data.json."""
+"""Import the canonical DOCX into the website's structured content model."""
 
 from __future__ import annotations
 
 import argparse
 import json
 import re
-from collections import Counter
+import zipfile
 from pathlib import Path
 
-import pdfplumber
-from pypdf import PdfReader
+from docx import Document
+from docx.document import Document as DocumentType
+from docx.oxml.table import CT_Tbl
+from docx.oxml.text.paragraph import CT_P
+from docx.table import Table, _Cell
+from docx.text.paragraph import Paragraph
 
 
-ROMANS = [
-    "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI",
-    "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
-    "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII",
-    "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI",
-    "XXXVII",
-]
-VALID_ARTICLES = {"PRELIMINARY", *ROMANS}
-NUMBERED_RE = re.compile(r"^(\d+)\.\s*(.*)$")
+ARTICLE_RE = re.compile(r"^ARTICLE\s+([IVXLCDM]+)\s+(.+)$", re.IGNORECASE)
+SCHEDULE_RE = re.compile(r"^SCHEDULE\s+([A-Z])\s+(.+)$", re.IGNORECASE)
+SECTION_RE = re.compile(r"^(Section(?:\s+\d+)?)\s*[—-]\s*(.+)$", re.IGNORECASE)
+GENERIC_WORDS = {
+    "and", "the", "of", "for", "national", "public", "community", "state",
+    "commonwealth", "office", "authority", "agency", "system", "service",
+}
+SOURCE_OVERRIDES = {
+    "National Challenge System": ["article-xiii"],
+    "National Transportation Authority": ["article-xxxvii"],
+    "National Education Authority": ["article-xxxi"],
+}
 
 
-def clean_space(value: str) -> str:
-    value = value.replace("\u00a0", " ").strip()
-    value = re.sub(r"\s+", " ", value)
-    return re.sub(r"^(\d+)\.(?=[A-Za-z])", r"\1. ", value)
+def clean(value: str) -> str:
+    return re.sub(r"\s+", " ", value.replace("\u00a0", " ")).strip()
 
 
-def join_wrapped(left: str, right: str) -> str:
-    left = clean_space(left)
-    right = clean_space(right)
-    if not left:
-        return right
-    if not right:
-        return left
-    if left.endswith("-") and right[:1].islower():
-        return left + right
-    return f"{left} {right}"
+def slugify(value: str) -> str:
+    value = value.lower().encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"^-+|-+$", "", re.sub(r"[^a-z0-9]+", "-", value)) or "entry"
 
 
-def line_size(line: dict) -> float:
-    sizes = [round(float(char.get("size", 0)), 1) for char in line.get("chars", [])]
-    return Counter(sizes).most_common(1)[0][0] if sizes else 0
+def title_case_heading(value: str) -> str:
+    if not value.isupper():
+        return value
+    small = {"a", "an", "and", "as", "at", "but", "by", "for", "in", "of", "on", "or", "the", "to"}
+    words = value.lower().split()
+    return " ".join(word if index and word in small else word[:1].upper() + word[1:] for index, word in enumerate(words))
 
 
-def table_cells(words: list[dict], starts: list[float]) -> list[str]:
-    cells = [[] for _ in starts]
-    for word in sorted(words, key=lambda item: item["x0"]):
-        text = word["text"].strip()
-        if not text:
-            continue
-        x0 = word["x0"]
-        index = 0
-        for candidate, start in enumerate(starts):
-            if x0 >= start - 3:
-                index = candidate
-        cells[index].append(text)
-    return [clean_space(" ".join(cell)) for cell in cells]
+def iter_blocks(parent: DocumentType | _Cell):
+    element = parent.element.body if isinstance(parent, DocumentType) else parent._tc
+    for child in element.iterchildren():
+        if isinstance(child, CT_P):
+            yield Paragraph(child, parent)
+        elif isinstance(child, CT_Tbl):
+            yield Table(child, parent)
 
 
-def header_cells(words: list[dict]) -> tuple[list[str], list[float]]:
-    words = sorted(words, key=lambda item: item["x0"])
-    groups = []
-    current = []
-    previous_x1 = None
-    for word in words:
-        if previous_x1 is not None and word["x0"] - previous_x1 > 70 and current:
-            groups.append(current)
-            current = []
-        current.append(word)
-        previous_x1 = word["x1"]
-    if current:
-        groups.append(current)
-    starts = [group[0]["x0"] for group in groups]
-    headers = [clean_space(" ".join(word["text"] for word in group)) for group in groups]
-    return headers, starts
+def table_block(table: Table) -> dict:
+    matrix = [[clean(cell.text) for cell in row.cells] for row in table.rows]
+    return {
+        "type": "table",
+        "headers": matrix[0] if matrix else [],
+        "rows": matrix[1:] if len(matrix) > 1 else [],
+    }
 
 
-def add_text_block(blocks: list[dict], text: str) -> None:
-    text = clean_space(text)
+def heading_block(text: str) -> dict:
+    text = clean(text)
+    match = SECTION_RE.match(text)
+    if match:
+        return {"type": "heading", "label": clean(match.group(1)).title(), "text": clean(match.group(2))}
+    return {"type": "heading", "label": "", "text": title_case_heading(text)}
+
+
+def append_paragraph(blocks: list[dict], paragraph: Paragraph) -> None:
+    text = clean(paragraph.text)
     if not text:
         return
-    numbered = NUMBERED_RE.match(text)
-    if not numbered:
-        blocks.append({"type": "paragraph", "text": text})
+    if paragraph.style.name == "Canonical Section Heading":
+        blocks.append(heading_block(text))
         return
-
-    number = int(numbered.group(1))
-    item = clean_space(numbered.group(2))
-    previous = blocks[-1] if blocks else None
-    expected = previous["start"] + len(previous["items"]) if previous and previous["type"] == "ordered-list" else None
-    if previous and previous["type"] == "ordered-list" and expected == number:
-        previous["items"].append(item)
-    else:
-        blocks.append({"type": "ordered-list", "start": number, "items": [item]})
-
-
-def parse_structural_pdf(path: Path) -> dict[str, dict]:
-    parsed: dict[str, dict] = {}
-    current = None
-    body = ""
-    body_page = None
-    body_top = None
-    table = None
-
-    def flush_body() -> None:
-        nonlocal body, body_page, body_top
-        if current and body:
-            add_text_block(current["blocks"], body)
-        body = ""
-        body_page = None
-        body_top = None
-
-    def flush_table() -> None:
-        nonlocal table
-        table = None
-
-    with pdfplumber.open(path) as pdf:
-        for page_number, page in enumerate(pdf.pages, 1):
-            lines = page.extract_text_lines(return_chars=True)
-            words_by_top = {}
-            for word in page.extract_words(extra_attrs=["size"]):
-                words_by_top.setdefault(round(float(word["top"]), 1), []).append(word)
-            for line in lines:
-                top = float(line["top"])
-                if top < 58 or top > 735:
-                    continue
-                text = clean_space(line["text"])
-                if not text:
-                    continue
-                size = line_size(line)
-
-                if text == "TABLE OF CONTENTS":
-                    flush_body()
-                    flush_table()
-                    current = None
-                    continue
-
-                if size == 18.0 and text.startswith("ARTICLE "):
-                    flush_body()
-                    flush_table()
-                    label = text.removeprefix("ARTICLE ")
-                    key = "PRELIMINARY" if label == "PRELIMINARY DECLARATION" else label
-                    if key not in VALID_ARTICLES:
-                        current = None
-                        continue
-                    current = {"title_lines": [], "blocks": []}
-                    parsed[key] = current
-                    continue
-
-                if current is None:
-                    continue
-
-                if size == 18.0:
-                    flush_body()
-                    flush_table()
-                    if current["blocks"]:
-                        current["blocks"].append({"type": "heading", "text": text.title() if text.isupper() else text})
-                    else:
-                        current["title_lines"].append(text)
-                    continue
-
-                if size == 12.0:
-                    flush_body()
-                    flush_table()
-                    current["blocks"].append({"type": "heading", "text": text})
-                    continue
-
-                if size == 9.5:
-                    flush_body()
-                    words = words_by_top.get(round(top, 1), [])
-                    headers, starts = header_cells(words)
-                    previous = current["blocks"][-1] if current["blocks"] else None
-                    if previous and previous.get("type") == "table" and previous.get("headers") == headers:
-                        block = previous
-                    else:
-                        block = {"type": "table", "headers": headers, "rows": []}
-                        current["blocks"].append(block)
-                    table = {"block": block, "starts": starts, "last_top": None, "last_page": None}
-                    continue
-
-                if size == 9.0 and table:
-                    words = words_by_top.get(round(top, 1), [])
-                    cells = table_cells(words, table["starts"])
-                    rows = table["block"]["rows"]
-                    is_continuation = (
-                        rows
-                        and table["last_page"] == page_number
-                        and table["last_top"] is not None
-                        and top - table["last_top"] <= 15.5
-                    )
-                    if (cells[0] and not is_continuation) or not rows:
-                        rows.append(cells)
-                    else:
-                        rows[-1] = [join_wrapped(old, new) for old, new in zip(rows[-1], cells)]
-                    table["last_top"] = top
-                    table["last_page"] = page_number
-                    continue
-
-                flush_table()
-                if not 10.7 <= size <= 11.2:
-                    continue
-
-                starts_number = bool(NUMBERED_RE.match(text))
-                previous_numbered = bool(NUMBERED_RE.match(body))
-                page_changed = body_page is not None and body_page != page_number
-                gap = top - body_top if body_top is not None and body_page == page_number else 0
-                prior_complete = bool(re.search(r"[.!?;:]$", body))
-
-                if body and (
-                    starts_number
-                    or (previous_numbered and prior_complete)
-                    or (gap > 18.5 and prior_complete)
-                    or (page_changed and prior_complete)
-                ):
-                    flush_body()
-
-                body = join_wrapped(body, text)
-                body_page = page_number
-                body_top = top
-
-    flush_body()
-    return parsed
+    if paragraph.style.name == "Canonical Bullet":
+        item = clean(text.lstrip("•\u2022 "))
+        if blocks and blocks[-1].get("type") == "unordered-list":
+            blocks[-1]["items"].append(item)
+        else:
+            blocks.append({"type": "unordered-list", "items": [item]})
+        return
+    if paragraph.style.name not in {"Table Spacer", "Figure Caption"}:
+        blocks.append({"type": "paragraph", "text": text})
 
 
-def clean_chat_lines(path: Path) -> list[str]:
-    reader = PdfReader(path)
-    lines = []
-    for page_number, page in enumerate(reader.pages, 1):
-        if page_number == 1:
-            continue
-        for raw in (page.extract_text() or "").splitlines():
-            text = clean_space(raw)
-            if not text:
-                continue
-            if re.match(r"^\d+/\d+/\d+,", text):
-                continue
-            if re.match(r"^Page \d+ of \d+", text):
-                continue
-            if text.startswith("https://chatgpt.com/") or text in {"Edit", "To d ay 6:18 PM"}:
-                continue
-            lines.append(text)
-    return lines
+def entry_type(name: str) -> str:
+    lowered = name.lower()
+    if "authority" in lowered:
+        return "authority"
+    if "agency" in lowered:
+        return "agency"
+    if "office" in lowered:
+        return "office"
+    if "court" in lowered:
+        return "court"
+    if any(word in lowered for word in ("program", "campaign", "dividend")):
+        return "program"
+    if any(word in lowered for word in (
+        "system", "network", "database", "registry", "repository", "ledger",
+        "dashboard", "exchange", "data node",
+    )):
+        return "national-system"
+    return "institution"
 
 
-def parse_chat_body(lines: list[str]) -> list[dict]:
-    blocks: list[dict] = []
-    paragraph = ""
-    ordered_items = None
-    bullet_items = None
-    bullet_mode = False
-
-    def flush_paragraph() -> None:
-        nonlocal paragraph, bullet_mode
-        if paragraph:
-            blocks.append({"type": "paragraph", "text": clean_space(paragraph)})
-            bullet_mode = paragraph.rstrip().endswith(":")
-        paragraph = ""
-
-    def finish_lists() -> None:
-        nonlocal ordered_items, bullet_items
-        if ordered_items:
-            blocks.append({"type": "ordered-list", "start": ordered_items[0][0], "items": [item for _, item in ordered_items]})
-        if bullet_items:
-            blocks.append({"type": "unordered-list", "items": bullet_items})
-        ordered_items = None
-        bullet_items = None
-
-    index = 0
-    while index < len(lines):
-        text = lines[index]
-        numbered = NUMBERED_RE.match(text)
-
-        if numbered:
-            flush_paragraph()
-            bullet_mode = False
-            if bullet_items:
-                finish_lists()
-            number = int(numbered.group(1))
-            item = numbered.group(2)
-            index += 1
-            while index < len(lines) and not NUMBERED_RE.match(lines[index]):
-                if re.search(r"[.!?]$", item):
-                    break
-                item = join_wrapped(item, lines[index])
-                index += 1
-            if ordered_items is None:
-                ordered_items = []
-            ordered_items.append((number, clean_space(item)))
-            continue
-
-        if ordered_items:
-            finish_lists()
-
-        if bullet_mode:
-            item = text
-            index += 1
-            while index < len(lines) and not re.search(r"[;.!?]$", item):
-                if NUMBERED_RE.match(lines[index]):
-                    break
-                item = join_wrapped(item, lines[index])
-                index += 1
-            if bullet_items is None:
-                bullet_items = []
-            bullet_items.append(clean_space(item))
-            if re.search(r"[.!?]$", item):
-                finish_lists()
-                bullet_mode = False
-            continue
-
-        paragraph = join_wrapped(paragraph, text)
-        index += 1
-        if re.search(r"[.!?:]$", paragraph):
-            flush_paragraph()
-
-    flush_paragraph()
-    finish_lists()
-    return blocks
+def searchable_text(article: dict) -> str:
+    parts = [article["title"]]
+    for block in article["blocks"]:
+        parts.extend(block.get("items", []))
+        parts.append(block.get("text", ""))
+        parts.extend(block.get("headers", []))
+        for row in block.get("rows", []):
+            parts.extend(row)
+    return clean(" ".join(parts)).casefold()
 
 
-def parse_chat_sanitation(path: Path) -> list[dict]:
-    lines = clean_chat_lines(path)
-    sections = []
-    current_heading = None
-    current_lines = []
+def find_sources(name: str, articles: list[dict]) -> list[str]:
+    if name in SOURCE_OVERRIDES:
+        return SOURCE_OVERRIDES[name]
+    texts = {article["slug"]: searchable_text(article) for article in articles}
+    base = clean(re.sub(r"\s*\([^)]*\)\s*", " ", name)).casefold()
+    exact = [slug for slug, text in texts.items() if base in text]
+    if exact:
+        return exact
 
-    def flush_section() -> None:
-        nonlocal current_heading, current_lines
-        if current_heading:
-            sections.append({"type": "heading", "text": current_heading})
-            sections.extend(parse_chat_body(current_lines))
-        current_heading = None
-        current_lines = []
-
-    for text in lines:
-        if re.match(r"^Section \d+ — ", text):
-            flush_section()
-            current_heading = text
-        elif current_heading:
-            current_lines.append(text)
-    flush_section()
-    return sections
-
-
-def normalize_housing_tables(blocks: list[dict]) -> list[dict]:
-    normalized = list(blocks)
-
-    ownership_index = next(
-        index for index, block in enumerate(normalized)
-        if block.get("type") == "heading" and block.get("text") == "Section 1 — Residential Ownership Limits"
-    )
-    ownership_text = normalized[ownership_index + 1]["text"]
-    ownership_prose = ownership_text.split("Ownership includes", 1)[1]
-    normalized[ownership_index + 1:ownership_index + 2] = [
-        {
-            "type": "table",
-            "headers": ["Certified individual annual income", "Maximum residential properties"],
-            "rows": [
-                ["Below $500,000", "One"],
-                ["$500,000 through $1,000,000", "Two"],
-                ["Above $1,000,000", "Three"],
-            ],
-        },
-        {"type": "paragraph", "text": f"Ownership includes{ownership_prose}"},
-    ]
-
-    tiers_index = next(
-        index for index, block in enumerate(normalized)
-        if block.get("type") == "heading" and block.get("text") == "Section 8 — Tiered Housing Values"
-    )
-    tier_rows = [
-        ["I", "Up to 600 sq. ft."],
-        ["II", "601-1,200 sq. ft."],
-        ["III", "1,201-1,800 sq. ft."],
-        ["IV", "1,801-2,500 sq. ft."],
-        ["V", "2,501-3,500 sq. ft."],
-        ["VI", "More than 3,500 sq. ft."],
-    ]
-    normalized[tiers_index + 1:tiers_index + 7] = [
-        {"type": "table", "headers": ["Tier", "Habitable area"], "rows": tier_rows},
-    ]
-    return normalized
-
-
-def block_text(block: dict) -> str:
-    if block["type"] in {"heading", "paragraph"}:
-        return block["text"]
-    if block["type"] in {"ordered-list", "unordered-list"}:
-        return " ".join(block["items"])
-    if block["type"] == "table":
-        return " ".join(block["headers"] + [cell for row in block["rows"] for cell in row])
-    return ""
-
-
-def first_paragraph(blocks: list[dict]) -> str:
-    return next((block["text"] for block in blocks if block["type"] == "paragraph"), "")
+    tokens = [token for token in re.findall(r"[a-z0-9]+", base) if len(token) > 3 and token not in GENERIC_WORDS]
+    scored = []
+    for article in articles:
+        text = texts[article["slug"]]
+        score = sum(token in text for token in tokens)
+        if tokens and score >= max(2, len(tokens) - 1):
+            scored.append((score, article["order"], article["slug"]))
+    return [item[2] for item in sorted(scored, key=lambda item: (-item[0], item[1]))[:3]]
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data", required=True, type=Path)
-    parser.add_argument("--constitution", required=True, type=Path)
-    parser.add_argument("--chat-export", required=True, type=Path)
+    parser.add_argument("docx", type=Path)
+    parser.add_argument("output", type=Path)
+    parser.add_argument("--flag-output", type=Path)
     args = parser.parse_args()
 
-    data = json.loads(args.data.read_text(encoding="utf-8"))
-    parsed = parse_structural_pdf(args.constitution)
-    existing = {article["roman"]: article for article in data["articles"]}
+    document = Document(args.docx)
+    ordered = list(iter_blocks(document))
 
-    articles = []
-    for order, roman in enumerate(["PRELIMINARY", *ROMANS]):
-        source = parsed[roman]
-        if roman == "XXXV":
-            source["blocks"] = parse_chat_sanitation(args.chat_export)
-        elif roman == "XXX":
-            source["blocks"] = normalize_housing_tables(source["blocks"])
+    toc_table = document.tables[2]
+    toc = {clean(row.cells[0].text): clean(row.cells[1].text) for row in toc_table.rows[1:]}
 
-        if roman == "XXXVII":
-            article = {
-                "number": "XXXVII",
-                "roman": "XXXVII",
-                "title": "National Identity, Flag, and the American Builder Beaver",
-                "slug": "article-xxxvii",
-                "order": order,
-            }
-        else:
-            article = existing[roman]
+    preliminary = {"title": "Preliminary Declaration", "blocks": []}
+    identity = {
+        "title": "National Purpose and Identity",
+        "flag": {"title": "The National Flag", "blocks": []},
+        "animal": {"title": "The American Builder Beaver", "species": "Castor canadensis", "blocks": []},
+    }
+    branches = {"title": "Constitutional Government", "introduction": "", "items": [], "flow": []}
+    directory_sections: list[dict] = []
+    articles: list[dict] = []
+    schedules: list[dict] = []
+    attestation = {"identifier": "Final Attestation", "title": "Oath and Public Trust", "slug": "final-attestation", "blocks": []}
 
-        blocks = source["blocks"]
-        article["order"] = order
-        article["summary"] = first_paragraph(blocks)
-        article["sections"] = [block["text"] for block in blocks if block["type"] == "heading"]
-        article["excerpt"] = [block_text(block) for block in blocks[:6] if block_text(block)]
-        article["textBlocks"] = blocks
-        article["fullText"] = [block_text(block) for block in blocks if block_text(block)]
-        articles.append(article)
+    mode = "front"
+    identity_part = None
+    current_article = None
+    current_schedule = None
+    current_directory = None
+    next_table_role = None
 
-    data["articles"] = articles
-    identity_article = next(article for article in articles if article["roman"] == "XXXVII")
-    identity = data["identity"]
-    identity["source"] = "Article XXXVII"
-    identity["summary"] = identity_article["summary"]
-    identity["sections"] = identity_article["sections"]
-    identity["excerpt"] = identity_article["excerpt"]
-    identity["textBlocks"] = identity_article["textBlocks"]
-    identity["fullText"] = identity_article["fullText"]
-    identity["animal"] = next(
-        block["text"] for block in identity_article["textBlocks"]
-        if block["type"] == "paragraph" and "represents the values" in block["text"]
-    )
-    identity["flagMeaning"] = next(
-        block["text"] for block in identity_article["textBlocks"]
-        if block["type"] == "paragraph" and "deep midnight-blue field" in block["text"]
-    )
+    for block in ordered:
+        if isinstance(block, Paragraph):
+            text = clean(block.text)
+            style = block.style.name
+            if not text:
+                continue
 
-    args.data.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Imported {len(articles)} constitutional entries with {sum(len(article['textBlocks']) for article in articles)} structured blocks.")
+            if style == "Front Matter Heading":
+                if text == "PRELIMINARY DECLARATION":
+                    mode = "preliminary"
+                elif text == "ARTICLE OF NATIONAL IDENTITY AND SYMBOLS":
+                    mode = "identity"
+                elif text == "TABLE OF CONTENTS":
+                    mode = "toc"
+                elif text == "CONSTITUTIONAL BRANCHES OF GOVERNMENT":
+                    mode = "branches"
+                elif text == "AGENCIES, AUTHORITIES, INSTITUTIONS, AND NATIONAL SYSTEMS":
+                    mode = "directory"
+                continue
+
+            article_match = ARTICLE_RE.match(text) if style == "Canonical Article Heading" else None
+            schedule_match = SCHEDULE_RE.match(text) if style == "Canonical Article Heading" else None
+            if article_match:
+                roman = article_match.group(1).upper()
+                identifier = f"Article {roman}"
+                current_article = {
+                    "identifier": identifier,
+                    "roman": roman,
+                    "number": len(articles) + 1,
+                    "order": len(articles) + 1,
+                    "title": toc.get(identifier, title_case_heading(article_match.group(2))),
+                    "slug": f"article-{roman.lower()}",
+                    "blocks": [],
+                }
+                articles.append(current_article)
+                mode = "article"
+                continue
+            if schedule_match:
+                letter = schedule_match.group(1).upper()
+                identifier = f"Schedule {letter}"
+                current_schedule = {
+                    "identifier": identifier,
+                    "letter": letter,
+                    "title": toc.get(identifier, title_case_heading(schedule_match.group(2))),
+                    "slug": f"schedule-{letter.lower()}",
+                    "blocks": [],
+                }
+                schedules.append(current_schedule)
+                mode = "schedule"
+                continue
+            if style == "Canonical Article Heading" and text == "FINAL ATTESTATION OATH AND PUBLIC TRUST":
+                mode = "attestation"
+                continue
+
+            if mode == "preliminary":
+                append_paragraph(preliminary["blocks"], block)
+            elif mode == "identity":
+                if style == "Canonical Section Heading":
+                    identity_part = "flag" if "FLAG" in text else "animal"
+                elif identity_part:
+                    append_paragraph(identity[identity_part]["blocks"], block)
+            elif mode == "branches":
+                if style == "Canonical Section Heading" and "Core Decision Flow" in text:
+                    next_table_role = "flow"
+                elif not branches["introduction"] and style == "Normal":
+                    branches["introduction"] = text
+            elif mode == "directory":
+                if style == "Canonical Section Heading":
+                    current_directory = {"title": text, "slug": slugify(text), "entries": []}
+                    directory_sections.append(current_directory)
+            elif mode == "article" and current_article:
+                append_paragraph(current_article["blocks"], block)
+            elif mode == "schedule" and current_schedule:
+                append_paragraph(current_schedule["blocks"], block)
+            elif mode == "attestation":
+                append_paragraph(attestation["blocks"], block)
+            continue
+
+        table = table_block(block)
+        if mode == "identity" and identity_part:
+            identity[identity_part]["blocks"].append(table)
+        elif mode == "branches":
+            if next_table_role == "flow":
+                branches["flow"] = table["rows"]
+                next_table_role = None
+            else:
+                branches["items"] = [
+                    {
+                        "name": row[0],
+                        "slug": slugify(row[0]),
+                        "composition": row[1],
+                        "authority": row[2],
+                        "checks": row[3],
+                        "entryType": "government-structure",
+                    }
+                    for row in table["rows"]
+                ]
+        elif mode == "directory" and current_directory:
+            for row in table["rows"]:
+                current_directory["entries"].append({
+                    "name": row[0],
+                    "slug": slugify(row[0]),
+                    "role": row[1],
+                    "entryType": entry_type(row[0]),
+                    "directorySection": current_directory["title"],
+                })
+        elif mode == "article" and current_article:
+            current_article["blocks"].append(table)
+        elif mode == "schedule" and current_schedule:
+            current_schedule["blocks"].append(table)
+        elif mode == "attestation":
+            attestation["blocks"].append(table)
+
+    for article in articles:
+        first_paragraph = next((b["text"] for b in article["blocks"] if b["type"] == "paragraph"), "")
+        article["summary"] = first_paragraph
+        article["sectionCount"] = sum(block["type"] == "heading" for block in article["blocks"])
+
+    for branch in branches["items"]:
+        branch["sourceArticles"] = find_sources(branch["name"], articles)
+    for section in directory_sections:
+        for entry in section["entries"]:
+            entry["sourceArticles"] = find_sources(entry["name"], articles)
+
+    output = {
+        "site": {
+            "formalName": "The Generational Commonwealth",
+            "constitutionTitle": "The Constitution of the Generational Commonwealth",
+            "edition": "Comprehensive Canonical Structural Edition",
+            "date": "July 2026",
+            "description": "A fictional constitutional design for civic analysis, institutional modeling, and computational simulation.",
+            "flag": "/assets/generational-commonwealth-flag.png",
+            "animal": "/assets/american-builder-beaver.png",
+        },
+        "preliminary": preliminary,
+        "identity": identity,
+        "branches": branches,
+        "directorySections": directory_sections,
+        "articles": articles,
+        "schedules": schedules,
+        "attestation": attestation,
+    }
+
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+    if args.flag_output:
+        args.flag_output.parent.mkdir(parents=True, exist_ok=True)
+        with zipfile.ZipFile(args.docx) as archive:
+            args.flag_output.write_bytes(archive.read("word/media/image1.png"))
+
+    directory_entries = [entry for section in directory_sections for entry in section["entries"]]
+    unresolved = [entry["name"] for entry in directory_entries if not entry["sourceArticles"]]
+    print(f"Imported {len(articles)} articles, {len(schedules)} schedules, {len(branches['items'])} branches, and {len(directory_entries)} directory entries.")
+    print(f"Directory entries without a matched source article: {len(unresolved)}")
+    for name in unresolved:
+        print(f"  - {name}")
 
 
 if __name__ == "__main__":
